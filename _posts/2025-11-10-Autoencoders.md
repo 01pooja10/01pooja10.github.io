@@ -1,4 +1,4 @@
-## Blog Post Title From First Header
+## Autoencoders
 
 Autoencoders (AEs) are a family of generative models which make use of the encoder-decoder architecture to model data and reconstruct varied forms or representations of the input distribution. This aspect propels the autoencoder family into the generative AI sphere.
 
