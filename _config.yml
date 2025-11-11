@@ -19,7 +19,6 @@ linkedin_username: "pooja-ravi01"
 #########################################################################################
 theme: "minima"
 
-rss: rss
 
 kramdown:
   syntax_highlighter_opts:
