@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="page-title">Pooja Ravi — Blog</title>
     <link href="https://fonts.cdnfonts.com/css/libertinus-mono" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet">
     <!-- Marked.js for markdown rendering -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.1/marked.min.js"></script>
     <style>
@@ -21,8 +21,15 @@
             --card-border: rgba(201, 168, 76, 0.15);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             background: var(--deep);
@@ -41,65 +48,93 @@
         /* ─── FLOATING BACKGROUND ─── */
         .bg-wrapper {
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             z-index: 0;
             overflow: hidden;
         }
 
         .bg-image {
-            width: 120%; height: 120%;
+            width: 120%;
+            height: 120%;
             object-fit: cover;
             position: absolute;
-            top: -10%; left: -10%;
+            top: -10%;
+            left: -10%;
             animation: bgFloat 30s ease-in-out infinite;
             opacity: 0.40;
             filter: saturate(0.8) brightness(0.65);
         }
 
         @keyframes bgFloat {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(15px, -20px) scale(1.02); }
-            50% { transform: translate(-10px, 10px) scale(1.01); }
-            75% { transform: translate(10px, 15px) scale(1.03); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                transform: translate(15px, -20px) scale(1.02);
+            }
+
+            50% {
+                transform: translate(-10px, 10px) scale(1.01);
+            }
+
+            75% {
+                transform: translate(10px, 15px) scale(1.03);
+            }
         }
 
         .bg-overlay {
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             z-index: 1;
             background:
-                radial-gradient(ellipse at 20% 0%, rgba(201,168,76,0.04) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 100%, rgba(122,59,78,0.06) 0%, transparent 60%),
-                linear-gradient(180deg, rgba(26,20,16,0.4) 0%, transparent 30%, transparent 70%, rgba(26,20,16,0.6) 100%);
+                radial-gradient(ellipse at 20% 0%, rgba(201, 168, 76, 0.04) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 100%, rgba(122, 59, 78, 0.06) 0%, transparent 60%),
+                linear-gradient(180deg, rgba(26, 20, 16, 0.4) 0%, transparent 30%, transparent 70%, rgba(26, 20, 16, 0.6) 100%);
             pointer-events: none;
         }
 
-        .content { position: relative; z-index: 10; }
+        .content {
+            position: relative;
+            z-index: 10;
+        }
 
         /* ─── NAV ─── */
         nav {
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             z-index: 100;
             padding: 22px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             backdrop-filter: blur(30px);
-            background: rgba(26,20,16,0.7);
+            background: rgba(26, 20, 16, 0.7);
             border-bottom: 1px solid var(--card-border);
         }
 
         .nav-name {
-            font-family: 'Mea Culpa', cursive;
+            font-family: 'Libertinus Mono', monospace;
             font-size: 1.6rem;
             color: var(--gold);
             text-decoration: none;
         }
 
-        .nav-links { display: flex; gap: 6px; align-items: center; }
+        .nav-links {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
 
         .nav-links a {
             color: var(--cream-dim);
@@ -115,7 +150,7 @@
 
         .nav-links a:hover {
             color: var(--gold);
-            background: rgba(201,168,76,0.08);
+            background: rgba(201, 168, 76, 0.08);
         }
 
         .nav-links a.active {
@@ -143,10 +178,12 @@
             transition: color 0.3s;
         }
 
-        .post-back:hover { color: var(--gold); }
+        .post-back:hover {
+            color: var(--gold);
+        }
 
         .post-title {
-            font-family: 'Mea Culpa', cursive;
+            font-family: 'Libertinus Mono', monospace;
             font-size: clamp(3rem, 6vw, 5rem);
             color: var(--gold);
             line-height: 1.1;
@@ -187,7 +224,7 @@
 
         /* Markdown rendered styles */
         .post-body h1 {
-            font-family: 'Mea Culpa', cursive;
+            font-family: 'Libertinus Mono', monospace;
             font-size: 2.8rem;
             color: var(--gold);
             margin: 50px 0 20px;
@@ -195,7 +232,7 @@
         }
 
         .post-body h2 {
-            font-family: 'Mea Culpa', cursive;
+            font-family: 'Libertinus Mono', monospace;
             font-size: 2.2rem;
             color: var(--gold);
             margin: 50px 0 16px;
@@ -203,7 +240,7 @@
         }
 
         .post-body h3 {
-            font-family: 'Mea Culpa', cursive;
+            font-family: 'Libertinus Mono', monospace;
             font-size: 1.8rem;
             color: var(--gold-light);
             margin: 40px 0 14px;
@@ -229,7 +266,7 @@
         .post-body a {
             color: var(--gold);
             text-decoration: none;
-            border-bottom: 1px solid rgba(201,168,76,0.3);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.3);
             transition: border-color 0.3s;
         }
 
@@ -248,7 +285,7 @@
             border-left: 3px solid var(--gold);
             padding: 16px 24px;
             margin: 24px 0;
-            background: rgba(201,168,76,0.05);
+            background: rgba(201, 168, 76, 0.05);
             border-radius: 0 10px 10px 0;
             font-size: 0.9rem;
             color: var(--cream-dim);
@@ -263,7 +300,8 @@
             margin-bottom: 0;
         }
 
-        .post-body ul, .post-body ol {
+        .post-body ul,
+        .post-body ol {
             padding-left: 24px;
             margin-bottom: 20px;
         }
@@ -280,7 +318,7 @@
         }
 
         .post-body code {
-            background: rgba(201,168,76,0.1);
+            background: rgba(201, 168, 76, 0.1);
             padding: 2px 8px;
             border-radius: 4px;
             font-size: 0.85rem;
@@ -354,7 +392,8 @@
         }
 
         .loading-spinner {
-            width: 30px; height: 30px;
+            width: 30px;
+            height: 30px;
             border: 2px solid var(--card-border);
             border-top-color: var(--gold);
             border-radius: 50%;
@@ -363,12 +402,21 @@
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .fade-in {
@@ -376,165 +424,178 @@
         }
 
         @media (max-width: 700px) {
-            nav { padding: 16px 20px; }
-            .post-header, .post-body, .post-footer { padding-left: 20px; padding-right: 20px; }
-            .post-title { font-size: 2.5rem; }
+            nav {
+                padding: 16px 20px;
+            }
+
+            .post-header,
+            .post-body,
+            .post-footer {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .post-title {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<div class="bg-wrapper">
-    <img src="assets/bg.png" alt="" class="bg-image">
-</div>
-<div class="bg-overlay"></div>
+    <div class="bg-wrapper">
+        <img src="assets/bg.png" alt="" class="bg-image">
+    </div>
+    <div class="bg-overlay"></div>
 
-<div class="content">
-    <nav>
-        <a href="index.html" class="nav-name">Pooja Ravi</a>
-        <div class="nav-links">
-            <a href="index.html">Resume</a>
-            <a href="blogs.html" class="active">Blogs</a>
+    <div class="content">
+        <nav>
+            <a href="index.html" class="nav-name">Pooja Ravi</a>
+            <div class="nav-links">
+                <a href="index.html">Resume</a>
+                <a href="blogs.html" class="active">Blogs</a>
+            </div>
+        </nav>
+
+        <div class="post-header fade-in">
+            <a href="blogs.html" class="post-back">&larr; Back to all posts</a>
+            <h1 class="post-title" id="post-title"></h1>
+            <p class="post-subtitle" id="post-subtitle"></p>
+            <div class="post-meta" id="post-meta"></div>
         </div>
-    </nav>
 
-    <div class="post-header fade-in">
-        <a href="blogs.html" class="post-back">&larr; Back to all posts</a>
-        <h1 class="post-title" id="post-title"></h1>
-        <p class="post-subtitle" id="post-subtitle"></p>
-        <div class="post-meta" id="post-meta"></div>
+        <article class="post-body" id="post-body">
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                Loading post...
+            </div>
+        </article>
+
+        <div class="post-footer">
+            <a href="blogs.html">&larr; Back to all posts</a>
+        </div>
+
+        <footer>Pooja Ravi &copy; 2025</footer>
     </div>
 
-    <article class="post-body" id="post-body">
-        <div class="loading">
-            <div class="loading-spinner"></div>
-            Loading post...
-        </div>
-    </article>
+    <script>
+        // ─── POST REGISTRY ───
+        // Add new posts here. The slug must match the .md filename in /posts/
+        const posts = {
+            "autoencoders": {
+                title: "The Buzz Around Generative AI: Autoencoders",
+                subtitle: "Part two of the Generative AI blog series. Exploring autoencoders, denoising autoencoders, VAEs, and VQ-VAEs with mathematical intuitions.",
+                date: "Jul 5, 2023",
+                readTime: "10 min read",
+                tags: ["Generative AI", "Autoencoders", "VAE"]
+            },
+            "genai-intro": {
+                title: "The Buzz Around Generative AI: Introduction",
+                subtitle: "A preamble to a comprehensive series on generative models covering VAEs, GANs, normalizing flows, stable diffusion, and GPTs.",
+                date: "Jun 29, 2023",
+                readTime: "6 min read",
+                tags: ["Generative AI", "Deep Learning"]
+            },
+            "movie-recommender": {
+                title: "Build a Personalized Movie Recommender System",
+                subtitle: "How content-streaming giants use recommender systems, and how to build one from scratch.",
+                date: "Mar 18, 2021",
+                readTime: "8 min read",
+                tags: ["Recommender Systems", "Machine Learning"]
+            },
+            "chatbots": {
+                title: "Chatbots: The Neoteric Way to Text",
+                subtitle: "Build an interactive NLP-based chatbot in Python that can provide information about Autism.",
+                date: "Feb 3, 2021",
+                readTime: "7 min read",
+                tags: ["NLP", "Chatbots", "Keras"]
+            },
+            "time-series-code": {
+                title: "Time Series Forecasting — Code Edition",
+                subtitle: "The practical companion implementing ARIMA, SARIMA, and more in Python.",
+                date: "Jan 10, 2021",
+                readTime: "9 min read",
+                tags: ["Time Series", "ARIMA", "Python"]
+            },
+            "keras-image-gen": {
+                title: "Handling Images Deftly Using Keras' Image Data Generator",
+                subtitle: "A deep dive into Keras' ImageDataGenerator for augmentation, rescaling, and resizing.",
+                date: "Dec 16, 2020",
+                readTime: "6 min read",
+                tags: ["Keras", "Data Augmentation"]
+            },
+            "time-series-math": {
+                title: "Time Series Forecasting — Math Edition",
+                subtitle: "Forecasting the future without time machines, but not without math.",
+                date: "Dec 6, 2020",
+                readTime: "8 min read",
+                tags: ["Time Series", "Statistics"]
+            },
+            "heart-disease": {
+                title: "Predicting Heart Disease with Machine Learning",
+                subtitle: "A detailed end-to-end machine learning project walkthrough for heart disease classification.",
+                date: "Sep 18, 2020",
+                readTime: "7 min read",
+                tags: ["Healthcare", "Classification"]
+            }
+        };
 
-    <div class="post-footer">
-        <a href="blogs.html">&larr; Back to all posts</a>
-    </div>
+        // ─── LOAD POST ───
+        const params = new URLSearchParams(window.location.search);
+        const slug = params.get('post');
 
-    <footer>Pooja Ravi &copy; 2025</footer>
-</div>
+        if (slug && posts[slug]) {
+            const meta = posts[slug];
 
-<script>
-    // ─── POST REGISTRY ───
-    // Add new posts here. The slug must match the .md filename in /posts/
-    const posts = {
-        "autoencoders": {
-            title: "The Buzz Around Generative AI: Autoencoders",
-            subtitle: "Part two of the Generative AI blog series. Exploring autoencoders, denoising autoencoders, VAEs, and VQ-VAEs with mathematical intuitions.",
-            date: "Jul 5, 2023",
-            readTime: "10 min read",
-            tags: ["Generative AI", "Autoencoders", "VAE"]
-        },
-        "genai-intro": {
-            title: "The Buzz Around Generative AI: Introduction",
-            subtitle: "A preamble to a comprehensive series on generative models covering VAEs, GANs, normalizing flows, stable diffusion, and GPTs.",
-            date: "Jun 29, 2023",
-            readTime: "6 min read",
-            tags: ["Generative AI", "Deep Learning"]
-        },
-        "movie-recommender": {
-            title: "Build a Personalized Movie Recommender System",
-            subtitle: "How content-streaming giants use recommender systems, and how to build one from scratch.",
-            date: "Mar 18, 2021",
-            readTime: "8 min read",
-            tags: ["Recommender Systems", "Machine Learning"]
-        },
-        "chatbots": {
-            title: "Chatbots: The Neoteric Way to Text",
-            subtitle: "Build an interactive NLP-based chatbot in Python that can provide information about Autism.",
-            date: "Feb 3, 2021",
-            readTime: "7 min read",
-            tags: ["NLP", "Chatbots", "Keras"]
-        },
-        "time-series-code": {
-            title: "Time Series Forecasting — Code Edition",
-            subtitle: "The practical companion implementing ARIMA, SARIMA, and more in Python.",
-            date: "Jan 10, 2021",
-            readTime: "9 min read",
-            tags: ["Time Series", "ARIMA", "Python"]
-        },
-        "keras-image-gen": {
-            title: "Handling Images Deftly Using Keras' Image Data Generator",
-            subtitle: "A deep dive into Keras' ImageDataGenerator for augmentation, rescaling, and resizing.",
-            date: "Dec 16, 2020",
-            readTime: "6 min read",
-            tags: ["Keras", "Data Augmentation"]
-        },
-        "time-series-math": {
-            title: "Time Series Forecasting — Math Edition",
-            subtitle: "Forecasting the future without time machines, but not without math.",
-            date: "Dec 6, 2020",
-            readTime: "8 min read",
-            tags: ["Time Series", "Statistics"]
-        },
-        "heart-disease": {
-            title: "Predicting Heart Disease with Machine Learning",
-            subtitle: "A detailed end-to-end machine learning project walkthrough for heart disease classification.",
-            date: "Sep 18, 2020",
-            readTime: "7 min read",
-            tags: ["Healthcare", "Classification"]
-        }
-    };
+            // Set page title
+            document.getElementById('page-title').textContent = `${meta.title} — Pooja Ravi`;
 
-    // ─── LOAD POST ───
-    const params = new URLSearchParams(window.location.search);
-    const slug = params.get('post');
+            // Fill header
+            document.getElementById('post-title').textContent = meta.title;
+            document.getElementById('post-subtitle').textContent = meta.subtitle;
 
-    if (slug && posts[slug]) {
-        const meta = posts[slug];
-
-        // Set page title
-        document.getElementById('page-title').textContent = `${meta.title} — Pooja Ravi`;
-
-        // Fill header
-        document.getElementById('post-title').textContent = meta.title;
-        document.getElementById('post-subtitle').textContent = meta.subtitle;
-
-        // Build meta row
-        const metaHtml = `
+            // Build meta row
+            const metaHtml = `
             <span>${meta.date}</span>
             <span>&middot;</span>
             <span>${meta.readTime}</span>
             <span>&middot;</span>
             ${meta.tags.map(t => `<span class="tag">${t}</span>`).join('')}
         `;
-        document.getElementById('post-meta').innerHTML = metaHtml;
+            document.getElementById('post-meta').innerHTML = metaHtml;
 
-        // Configure marked
-        marked.setOptions({
-            breaks: true,
-            gfm: true
-        });
+            // Configure marked
+            marked.setOptions({
+                breaks: true,
+                gfm: true
+            });
 
-        // Fetch and render markdown
-        fetch(`posts/${slug}.md`)
-            .then(res => {
-                if (!res.ok) throw new Error('Post not found');
-                return res.text();
-            })
-            .then(md => {
-                document.getElementById('post-body').innerHTML = marked.parse(md);
-                document.getElementById('post-body').classList.add('fade-in');
-            })
-            .catch(() => {
-                document.getElementById('post-body').innerHTML = `
+            // Fetch and render markdown
+            fetch(`posts/${slug}.md`)
+                .then(res => {
+                    if (!res.ok) throw new Error('Post not found');
+                    return res.text();
+                })
+                .then(md => {
+                    document.getElementById('post-body').innerHTML = marked.parse(md);
+                    document.getElementById('post-body').classList.add('fade-in');
+                })
+                .catch(() => {
+                    document.getElementById('post-body').innerHTML = `
                     <div class="loading">
                         <p>Post not found. <a href="blogs.html" style="color:var(--gold)">Return to blogs</a>.</p>
                     </div>
                 `;
-            });
-    } else {
-        document.getElementById('post-body').innerHTML = `
+                });
+        } else {
+            document.getElementById('post-body').innerHTML = `
             <div class="loading">
                 <p>No post specified. <a href="blogs.html" style="color:var(--gold)">Browse all posts</a>.</p>
             </div>
         `;
-    }
-</script>
+        }
+    </script>
 </body>
+
 </html>
