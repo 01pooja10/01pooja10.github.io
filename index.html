@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pooja Ravi</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Raleway:wght@300;400;500;600;700&family=Inconsolata:wght@400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/libertinus-mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet">
     <style>
         :root {
             --cream: #f5f0e8;
@@ -35,7 +34,7 @@
         body {
             background: var(--deep);
             color: var(--cream);
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Libertinus Mono', monospace;
             font-weight: 400;
             line-height: 1.75;
             overflow-x: hidden;
@@ -65,8 +64,8 @@
             top: -10%;
             left: -10%;
             animation: bgFloat 30s ease-in-out infinite;
-            opacity: 0.22;
-            filter: saturate(0.7) brightness(0.6);
+            opacity: 0.45;
+            filter: saturate(0.85) brightness(0.7);
         }
 
         @keyframes bgFloat {
@@ -126,7 +125,7 @@
         }
 
         .nav-name {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Mea Culpa', cursive;
             font-size: 1.6rem;
             font-weight: 700;
             color: var(--gold);
@@ -175,7 +174,7 @@
         }
 
         .section-heading {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Mea Culpa', cursive;
             font-size: 2.6rem;
             font-weight: 700;
             color: var(--gold);
@@ -195,13 +194,13 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
+            align-items: flex-start;
+            text-align: left;
             padding-top: 80px;
         }
 
         .hero-name {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Mea Culpa', cursive;
             font-size: clamp(4rem, 9vw, 8rem);
             font-weight: 700;
             color: var(--gold);
@@ -211,7 +210,7 @@
         }
 
         .hero-title {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Libertinus Mono', monospace;
             font-size: 1.5rem;
             font-weight: 300;
             font-style: italic;
@@ -222,7 +221,7 @@
         }
 
         .hero-tagline {
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Libertinus Mono', monospace;
             font-size: 0.95rem;
             color: var(--cream-dim);
             max-width: 520px;
@@ -236,12 +235,12 @@
             gap: 14px;
             margin-top: 40px;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: flex-start;
             animation: fadeIn 1.2s ease-out 0.4s both;
         }
 
         .hero-link {
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Libertinus Mono', monospace;
             text-decoration: none;
             font-size: 0.8rem;
             font-weight: 600;
@@ -283,7 +282,7 @@
         }
 
         .stat-num {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Libertinus Mono', monospace;
             font-size: 2.8rem;
             font-weight: 600;
             color: var(--gold);
@@ -302,8 +301,8 @@
         .scroll-hint {
             position: absolute;
             bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 80px;
+            transform: none;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -362,7 +361,7 @@
         }
 
         .edu-degree {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Libertinus Mono', monospace;
             font-size: 1.35rem;
             font-weight: 600;
             color: var(--cream);
@@ -376,7 +375,7 @@
         }
 
         .edu-date {
-            font-family: 'Inconsolata', monospace;
+            font-family: 'Libertinus Mono', monospace;
             font-size: 0.82rem;
             color: var(--cream-dim);
             margin-bottom: 14px;
@@ -464,14 +463,14 @@
         }
 
         .tl-role {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Libertinus Mono', monospace;
             font-size: 1.4rem;
             font-weight: 600;
             color: var(--cream);
         }
 
         .tl-date {
-            font-family: 'Inconsolata', monospace;
+            font-family: 'Libertinus Mono', monospace;
             font-size: 0.8rem;
             color: var(--gold);
             padding: 4px 14px;
@@ -540,7 +539,7 @@
         }
 
         .pub-num {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Libertinus Mono', monospace;
             font-size: 2.5rem;
             font-weight: 300;
             color: var(--gold);
@@ -550,7 +549,7 @@
         }
 
         .pub-title {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Libertinus Mono', monospace;
             font-size: 1.05rem;
             font-weight: 500;
             font-style: italic;
@@ -583,7 +582,7 @@
         }
 
         .proj-name {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Libertinus Mono', monospace;
             font-size: 1.25rem;
             font-weight: 600;
             color: var(--cream);
@@ -604,7 +603,7 @@
         }
 
         .proj-tag {
-            font-family: 'Inconsolata', monospace;
+            font-family: 'Libertinus Mono', monospace;
             font-size: 0.72rem;
             padding: 4px 12px;
             border-radius: 100px;
@@ -612,42 +611,74 @@
             color: var(--cream-dim);
         }
 
-        /* ─── SKILLS ─── */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 36px;
+        /* ─── AREAS OF INTEREST ─── */
+        .interest-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
         }
 
-        .skill-cat-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--cream);
-            margin-bottom: 16px;
-            letter-spacing: 0.5px;
+        .interest-tab {
+            font-family: 'Libertinus Mono', monospace;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 10px 24px;
+            border-radius: 100px;
+            border: 1px solid var(--card-border);
+            color: var(--cream-dim);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s;
         }
 
-        .skill-pills {
+        .interest-tab:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .interest-tab.active {
+            background: var(--gold);
+            color: var(--deep);
+            border-color: var(--gold);
+        }
+
+        .interest-panel {
+            display: none;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 36px;
+            backdrop-filter: blur(20px);
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .interest-panel.active {
+            display: block;
+        }
+
+        .interest-panel p {
+            font-size: 0.92rem;
+            color: var(--cream-dim);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .interest-pills {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
 
-        .skill-pill {
+        .interest-pill {
             padding: 8px 18px;
             border-radius: 100px;
             font-size: 0.82rem;
             border: 1px solid var(--card-border);
             color: var(--cream-dim);
             background: rgba(18, 14, 10, 0.5);
-            transition: all 0.3s;
-        }
-
-        .skill-pill:hover {
-            border-color: var(--gold);
-            color: var(--gold);
-            transform: translateY(-1px);
         }
 
         /* ─── CONTACT ─── */
@@ -661,7 +692,7 @@
         }
 
         .contact-sub {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Libertinus Mono', monospace;
             font-size: 1.15rem;
             font-style: italic;
             color: var(--cream-dim);
@@ -702,7 +733,7 @@
             font-size: 0.75rem;
             color: var(--cream-dim);
             border-top: 1px solid var(--card-border);
-            font-family: 'Inconsolata', monospace;
+            font-family: 'Libertinus Mono', monospace;
             letter-spacing: 1px;
         }
 
@@ -1129,78 +1160,85 @@
             </div>
         </section>
 
-        <!-- Skills -->
+        <!-- Areas of Interest -->
         <section id="skills">
             <div class="reveal">
-                <div class="section-heading">Skills</div>
+                <div class="section-heading">Areas of Interest</div>
                 <div class="section-rule"></div>
             </div>
 
-            <div class="skills-grid">
-                <div class="reveal">
-                    <div class="skill-cat-title">Core</div>
-                    <div class="skill-pills">
-                        <span class="skill-pill">Python</span>
-                        <span class="skill-pill">PyTorch</span>
-                        <span class="skill-pill">AWS SageMaker</span>
-                        <span class="skill-pill">Docker</span>
-                        <span class="skill-pill">JAX</span>
-                        <span class="skill-pill">SQL</span>
+            <div class="interest-tabs reveal">
+                <button class="interest-tab active" data-tab="cv">Computer Vision</button>
+                <button class="interest-tab" data-tab="genai">Generative AI</button>
+                <button class="interest-tab" data-tab="multimodal">Multimodal AI</button>
+                <button class="interest-tab" data-tab="optim">Model Optimization</button>
+                <button class="interest-tab" data-tab="health">AI for Healthcare</button>
+            </div>
+
+            <div class="reveal">
+                <div class="interest-panel active" id="panel-cv">
+                    <p>Building systems that perceive, track, and reason about the visual world in real time &mdash;
+                        from object detection in live CCTV feeds to 3D scene reconstruction with neural radiance fields.
+                    </p>
+                    <div class="interest-pills">
+                        <span class="interest-pill">Object Detection &amp; Tracking</span>
+                        <span class="interest-pill">Semantic Segmentation</span>
+                        <span class="interest-pill">OCR</span>
+                        <span class="interest-pill">Video Processing</span>
+                        <span class="interest-pill">NeRFs</span>
+                        <span class="interest-pill">OpenCV</span>
+                        <span class="interest-pill">YOLOv4</span>
                     </div>
                 </div>
-                <div class="reveal">
-                    <div class="skill-cat-title">Libraries</div>
-                    <div class="skill-pills">
-                        <span class="skill-pill">OpenCV</span>
-                        <span class="skill-pill">NumPy</span>
-                        <span class="skill-pill">HuggingFace</span>
-                        <span class="skill-pill">TensorFlow</span>
-                        <span class="skill-pill">NLTK</span>
-                        <span class="skill-pill">TensorRT</span>
+                <div class="interest-panel" id="panel-genai">
+                    <p>Exploring the frontier of content generation &mdash; from training diffusion models from scratch
+                        to image-to-image translation pipelines that predict medical outcomes years into the future.</p>
+                    <div class="interest-pills">
+                        <span class="interest-pill">VAE</span>
+                        <span class="interest-pill">DCGAN</span>
+                        <span class="interest-pill">Pix2Pix</span>
+                        <span class="interest-pill">CycleGAN</span>
+                        <span class="interest-pill">StyleGAN</span>
+                        <span class="interest-pill">VQ-GAN</span>
+                        <span class="interest-pill">DDPM</span>
                     </div>
                 </div>
-                <div class="reveal">
-                    <div class="skill-cat-title">Computer Vision</div>
-                    <div class="skill-pills">
-                        <span class="skill-pill">Object Detection &amp; Tracking</span>
-                        <span class="skill-pill">Semantic Segmentation</span>
-                        <span class="skill-pill">OCR</span>
-                        <span class="skill-pill">Video Processing</span>
-                        <span class="skill-pill">NeRFs</span>
-                        <span class="skill-pill">Multimodal AI</span>
+                <div class="interest-panel" id="panel-multimodal">
+                    <p>Aligning vision and language representations to enable cross-modal reasoning &mdash; from
+                        fine-tuning multimodal LLMs for visual similarity to fusing radiology reports with X-ray
+                        embeddings.</p>
+                    <div class="interest-pills">
+                        <span class="interest-pill">LayoutLM</span>
+                        <span class="interest-pill">TrOCR</span>
+                        <span class="interest-pill">Donut (Swin+BART)</span>
+                        <span class="interest-pill">CLIP</span>
+                        <span class="interest-pill">BERT</span>
+                        <span class="interest-pill">Multimodal LLMs</span>
                     </div>
                 </div>
-                <div class="reveal">
-                    <div class="skill-cat-title">Generative AI</div>
-                    <div class="skill-pills">
-                        <span class="skill-pill">VAE</span>
-                        <span class="skill-pill">DCGAN</span>
-                        <span class="skill-pill">Pix2Pix</span>
-                        <span class="skill-pill">CycleGAN</span>
-                        <span class="skill-pill">StyleGAN</span>
-                        <span class="skill-pill">VQ-GAN</span>
-                        <span class="skill-pill">DDPM</span>
-                        <span class="skill-pill">BART</span>
-                        <span class="skill-pill">BERT</span>
+                <div class="interest-panel" id="panel-optim">
+                    <p>Making large models fast and deployable &mdash; compressing diffusion models for mobile
+                        inference, accelerating training across distributed GPUs, and optimizing production pipelines
+                        for financial-scale throughput.</p>
+                    <div class="interest-pills">
+                        <span class="interest-pill">Quantization</span>
+                        <span class="interest-pill">Pruning</span>
+                        <span class="interest-pill">Knowledge Distillation</span>
+                        <span class="interest-pill">Distributed Training</span>
+                        <span class="interest-pill">LoRA</span>
+                        <span class="interest-pill">TensorRT</span>
                     </div>
                 </div>
-                <div class="reveal">
-                    <div class="skill-cat-title">Model Optimization</div>
-                    <div class="skill-pills">
-                        <span class="skill-pill">Quantization</span>
-                        <span class="skill-pill">Pruning</span>
-                        <span class="skill-pill">Distributed Training</span>
-                        <span class="skill-pill">LoRA</span>
-                        <span class="skill-pill">Knowledge Distillation</span>
-                    </div>
-                </div>
-                <div class="reveal">
-                    <div class="skill-cat-title">AI for Healthcare</div>
-                    <div class="skill-pills">
-                        <span class="skill-pill">Medical Imaging</span>
-                        <span class="skill-pill">Time Series</span>
-                        <span class="skill-pill">3D Segmentation</span>
-                        <span class="skill-pill">X-ray Synthesis</span>
+                <div class="interest-panel" id="panel-health">
+                    <p>Applying deep learning to clinical challenges &mdash; predicting disease progression from medical
+                        imaging, synthesizing X-rays from radiology reports, and segmenting tumors in 3D brain scans.
+                    </p>
+                    <div class="interest-pills">
+                        <span class="interest-pill">Medical Imaging</span>
+                        <span class="interest-pill">X-ray Synthesis</span>
+                        <span class="interest-pill">3D Segmentation</span>
+                        <span class="interest-pill">Time Series</span>
+                        <span class="interest-pill">Clinical Translation</span>
                     </div>
                 </div>
             </div>
@@ -1251,6 +1289,16 @@
             sections.forEach(s => { if (scrollY >= s.offsetTop - 160) cur = s.id; });
             navLinks.forEach(a => {
                 a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+            });
+        });
+
+        // Interest tabs
+        document.querySelectorAll('.interest-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.interest-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.interest-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
             });
         });
     </script>
