@@ -523,6 +523,17 @@
             margin-bottom: 10px;
         }
 
+        .proj-name a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .proj-name a:hover {
+            color: var(--gold-light);
+        }
+
         .proj-desc {
             font-size: 0.88rem;
             color: var(--cream-dim);
@@ -545,16 +556,7 @@
             color: var(--cream-dim);
         }
 
-        .proj-tags a {
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
 
-        .proj-tags a:hover {
-            color: var(--gold-light);
-        }
 
         /* ─── AREAS OF INTEREST ─── */
         .interest-tabs {
@@ -1038,7 +1040,8 @@
 
             <div class="projects-grid">
                 <div class="card reveal">
-                    <div class="proj-name">NeRF &mdash; 2D Sketch to 3D Stylization</div>
+                    <div class="proj-name"><a href="https://github.com/01pooja10/Sketch2D-To-Style3D"
+                            target="_blank">NeRF &mdash; 2D Sketch to 3D Stylization &rarr;</a></div>
                     <div class="proj-desc">Convert 2D sketches to stylized 3D views using neural radiance fields.
                         Employed image style transfer with NeRF trained from scratch (with few-shot learning) and
                         CLIP-NeRF for text prompt-based stylization.</div>
@@ -1047,12 +1050,11 @@
                         <span class="proj-tag">CLIP</span>
                         <span class="proj-tag">Style Transfer</span>
                         <span class="proj-tag">Few-Shot</span>
-                        <a href="https://github.com/01pooja10/Sketch2D-To-Style3D" target="_blank">View Project
-                            &rarr;</a>
                     </div>
                 </div>
                 <div class="card reveal">
-                    <div class="proj-name">MobileGen &mdash; Optimizing Diffusion Models</div>
+                    <div class="proj-name"><a href="https://github.com/01pooja10/MobileGen" target="_blank">MobileGen
+                            &mdash; Optimizing Diffusion Models &rarr;</a></div>
                     <div class="proj-desc">Trained an optimized DDPM on cloud GPUs for accelerated mobile inference.
                         Employed quantization-aware training, knowledge distillation, pruning, and U-Net modifications.
                         Achieved 20% faster inference and 14% lower GFLOPs.</div>
@@ -1061,12 +1063,11 @@
                         <span class="proj-tag">Quantization</span>
                         <span class="proj-tag">Distillation</span>
                         <span class="proj-tag">Mobile</span>
-                        <a href="https://github.com/01pooja10/MobileGen" target="_blank">View
-                            Project &rarr;</a>
                     </div>
                 </div>
                 <div class="card reveal">
-                    <div class="proj-name">EchoCharlie</div>
+                    <div class="proj-name"><a href="https://github.com/01pooja10/echo-charlie"
+                            target="_blank">EchoCharlie &rarr;</a></div>
                     <div class="proj-desc">[Winning entry for the Boson AI Hackathon hosted in October 2025] Echo
                         Charlie is a multimodal voice restoration pipeline that rebuilds lost or corrupted audio in
                         videos using visual speech recognition, transcript cleanup, and AI-driven voice cloning models.
@@ -1074,12 +1075,13 @@
                     <div class="proj-tags">
                         <span class="proj-tag">Voice Cloning</span>
                         <span class="proj-tag">Audio RAG</span>
-                        <span class="proj-tag">Audio Inpainting</span>
-                        <a href="https://github.com/01pooja10/echo-charlie" target="_blank">View Project &rarr;</a>
+                        <span class="proj-tag">Embedding Search</span>
+                        <span class="proj-tag">Voice Inpainting</span>
                     </div>
                 </div>
                 <div class="card reveal">
-                    <div class="proj-name">RayGen &mdash; X-ray Image Synthesis</div>
+                    <div class="proj-name"><a href="https://github.com/01pooja10/multimodal-xray" target="_blank">RayGen
+                            &rarr;</a></div>
                     <div class="proj-desc">Cross-modal pipeline aligning vision and language embeddings to reconstruct
                         latent representations for chest X-ray synthesis. Masked images concatenated with BERT-processed
                         radiology reports produce synthesized X-rays.</div>
@@ -1087,12 +1089,11 @@
                         <span class="proj-tag">Cross-Modal</span>
                         <span class="proj-tag">BERT</span>
                         <span class="proj-tag">Medical AI</span>
-                        <a href="https://github.com/01pooja10/multimodal-xray" target="_blank">View
-                            Project &rarr;</a>
                     </div>
                 </div>
                 <div class="card reveal">
-                    <div class="proj-name">3D Tumor Segmentation</div>
+                    <div class="proj-name"><a href="https://github.com/01pooja10/TumorSegmentation3D" target="_blank">
+                            3D Tumor Segmentation &rarr;</a></div>
                     <div class="proj-desc">A research project to help detect and segment tumorous regions of the brain
                         with three segmentation architectures for multiclass semantic segmentation
                         utilizing soft attention mechanism, pyramid pooling to work with 3D brain MRI images</div>
@@ -1101,12 +1102,11 @@
                         <span class="proj-tag">MRI</span>
                         <span class="proj-tag">Segmentation</span>
                         <span class="proj-tag">U-Net</span>
-                        <a href="https://github.com/01pooja10/TumorSegmentation3D" target="_blank">View Project
-                            &rarr;</a>
                     </div>
                 </div>
                 <div class="card reveal">
-                    <div class="proj-name">EasyDocs</div>
+                    <div class="proj-name"><a href="https://github.com/01pooja10/EasyDocsResearch"
+                            target="_blank">EasyDocs &rarr;</a></div>
                     <div class="proj-desc">All-in-one academic utility: technical text summarization, document OCR and
                         parsing, keyword extraction, similar-publications recommender, and text-to-speech for easier
                         document understanding.</div>
@@ -1115,8 +1115,6 @@
                         <span class="proj-tag">OCR</span>
                         <span class="proj-tag">TTS</span>
                         <span class="proj-tag">Recommender</span>
-                        <a href="https://github.com/01pooja10/EasyDocsResearch" target="_blank">View
-                            Project &rarr;</a>
                     </div>
                 </div>
             </div>
