@@ -64,7 +64,7 @@
             top: -10%;
             left: -10%;
             animation: bgFloat 30s ease-in-out infinite;
-            opacity: 0.55;
+            opacity: 0.45;
             filter: saturate(0.85) brightness(0.7);
         }
 
@@ -196,7 +196,7 @@
             justify-content: center;
             align-items: flex-start;
             text-align: left;
-            padding-top: 80px;
+            padding-top: 140px;
         }
 
         .hero-name {
@@ -205,7 +205,7 @@
             font-weight: 700;
             color: var(--gold);
             line-height: 1;
-            margin-bottom: 20px;
+            margin-bottom: 50px;
             animation: fadeIn 1.2s ease-out;
         }
 
@@ -216,7 +216,7 @@
             font-style: italic;
             color: var(--cream-dim);
             letter-spacing: 3px;
-            margin-bottom: 12px;
+            margin-bottom: 24px;
             animation: fadeIn 1.2s ease-out 0.2s both;
         }
 
@@ -271,32 +271,6 @@
             border-color: var(--gold);
             color: var(--gold);
         }
-
-        .hero-stats {
-            display: flex;
-            gap: 60px;
-            margin-top: 70px;
-            padding-top: 40px;
-            border-top: 1px solid var(--card-border);
-            animation: fadeIn 1.2s ease-out 0.5s both;
-        }
-
-        .stat-num {
-            font-family: 'Libertinus Mono', monospace;
-            font-size: 2.8rem;
-            font-weight: 600;
-            color: var(--gold);
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 0.78rem;
-            color: var(--cream-dim);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-top: 6px;
-        }
-
 
         /* ─── CARDS ─── */
         .card {
@@ -740,11 +714,6 @@
                 font-size: 3.5rem;
             }
 
-            .hero-stats {
-                flex-wrap: wrap;
-                gap: 30px;
-            }
-
             .edu-grid,
             .skills-grid {
                 grid-template-columns: 1fr;
@@ -806,34 +775,24 @@
                 and performance optimization. Building systems that see, read, and understand.
             </p>
 
+            <div class="hero-location" style="
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 24px;
+            font-size: 0.85rem;
+            color: var(--cream-dim);
+            letter-spacing: 0.5px;
+            animation: fadeIn 1.2s ease-out 0.35s both;
+        ">
+                <span style="color: var(--gold-dark);">Toronto, Canada</span>
+                <span>MScAC (AI) @ University of Toronto | Vector Scholar in AI</span>
+            </div>
+
             <div class="hero-links">
                 <a href="mailto:kuchan2001@gmail.com" class="hero-link primary">Get in Touch</a>
                 <a href="blogs.html" class="hero-link ghost">Read My Blogs</a>
                 <a href="#experience" class="hero-link ghost">View Work</a>
-            </div>
-
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-num">4</div>
-                    <div class="stat-label">Publications</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-num">270+</div>
-                    <div class="stat-label">Institutions Protected</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-num">1</div>
-                    <div class="stat-label">Patent Pending</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-num">2</div>
-                    <div class="stat-label">Scholarships</div>
-                </div>
-            </div>
-
-            <div class="scroll-hint">
-                <span>Scroll</span>
-                <div class="scroll-line"></div>
             </div>
         </section>
 
@@ -985,7 +944,7 @@
                         <div class="tl-header">
                             <div>
                                 <div class="tl-role">Undergraduate Researcher</div>
-                                <div class="tl-company">SRM IST &mdash; India &middot; Supervised by Dr. B.
+                                <div class="tl-company">SRM IST &mdash; Chennai, India &middot; Supervised by Dr. B.
                                     Muruganantham &amp; Dr. Kottilingam K</div>
                             </div>
                             <span class="tl-date">Mar 2021 &ndash; Oct 2022</span>
@@ -1014,7 +973,9 @@
                     <div>
                         <div class="pub-title">&ldquo;An integrated document manipulation tool leveraging LLMs,
                             transformers, and attention mechanism&rdquo;</div>
-                        <div class="pub-meta">A. Shukla, P. Ravi, B. Arthi &mdash; AIP Conference Proceedings, April
+                        <div class="pub-meta">A. Shukla, <span
+                                style="font-weight:700; font-size:0.88rem; color:var(--gold-light);">P. Ravi</span>, B.
+                            Arthi &mdash; AIP Conference Proceedings, April
                             2023 &middot; <a href="https://doi.org/10.1063/5.0217040" target="_blank">View Paper
                                 &rarr;</a></div>
                     </div>
@@ -1024,7 +985,9 @@
                     <div>
                         <div class="pub-title">&ldquo;Real-time Multi-Module Student Engagement Detection System&rdquo;
                         </div>
-                        <div class="pub-meta">P. Ravi, A. Dewan &mdash; ICCIS, NIT Delhi, December 2022 &middot; <a
+                        <div class="pub-meta"><span
+                                style="font-weight:700; font-size:0.88rem; color:var(--gold-light);">P. Ravi</span>, A.
+                            Dewan &mdash; ICCIS, NIT Delhi, December 2022 &middot; <a
                                 href="https://doi.org/10.1007/978-981-99-2100-3_22" target="_blank">View Paper
                                 &rarr;</a></div>
                     </div>
@@ -1034,7 +997,9 @@
                     <div>
                         <div class="pub-title">&ldquo;Attention Mechanism, Linked Networks, and Pyramid Pooling Enabled
                             3D Biomedical Image Segmentation&rdquo;</div>
-                        <div class="pub-meta">P. Ravi, S. Roy, I. Dutta, K. Kottursamy &mdash; IEEE/ACIS SNPD, Taiwan,
+                        <div class="pub-meta"><span
+                                style="font-weight:700; font-size:0.88rem; color:var(--gold-light);">P. Ravi</span>, S.
+                            Roy, I. Dutta, K. Kottursamy &mdash; IEEE/ACIS SNPD, Taiwan,
                             2022 &middot; <a href="https://doi.org/10.1109/SNPD54884.2022.10051771" target="_blank">View
                                 Paper &rarr;</a></div>
                     </div>
@@ -1043,7 +1008,9 @@
                     <div class="pub-num">IV</div>
                     <div>
                         <div class="pub-title">&ldquo;Real-time GPU-accelerated Driver Assistance System&rdquo;</div>
-                        <div class="pub-meta">P. Ravi, A. Shukla, B. Muruganantham &mdash; RCAAI, November 2022 &middot;
+                        <div class="pub-meta"><span
+                                style="font-weight:700; font-size:0.88rem; color:var(--gold-light);">P. Ravi</span>, A.
+                            Shukla, B. Muruganantham &mdash; RCAAI, November 2022 &middot;
                             <a href="https://doi.org/10.1007/978-981-99-4634-1_64" target="_blank">View Paper &rarr;</a>
                         </div>
                     </div>
@@ -1137,7 +1104,7 @@
 
             <div class="reveal">
                 <div class="interest-panel active" id="panel-cv">
-                    <p>Building systems that perceive, track, and reason about the visual world in real time &mdash;
+                    <p>Building systems that perceive, track, and reason about the visual world in real time,
                         from object detection in live CCTV feeds to 3D scene reconstruction with neural radiance fields.
                     </p>
                     <div class="interest-pills">
@@ -1151,7 +1118,7 @@
                     </div>
                 </div>
                 <div class="interest-panel" id="panel-genai">
-                    <p>Exploring the frontier of content generation &mdash; from training diffusion models from scratch
+                    <p>Exploring the frontier of content generation by training diffusion models from scratch
                         to image-to-image translation pipelines that predict medical outcomes years into the future.</p>
                     <div class="interest-pills">
                         <span class="interest-pill">VAE</span>
@@ -1164,7 +1131,7 @@
                     </div>
                 </div>
                 <div class="interest-panel" id="panel-multimodal">
-                    <p>Aligning vision and language representations to enable cross-modal reasoning &mdash; from
+                    <p>Aligning vision and language representations to enable cross-modal reasoning from
                         fine-tuning multimodal LLMs for visual similarity to fusing radiology reports with X-ray
                         embeddings.</p>
                     <div class="interest-pills">
@@ -1177,9 +1144,9 @@
                     </div>
                 </div>
                 <div class="interest-panel" id="panel-optim">
-                    <p>Making large models fast and deployable &mdash; compressing diffusion models for mobile
+                    <p>Making large models fast and deployable by compressing diffusion models for mobile
                         inference, accelerating training across distributed GPUs, and optimizing production pipelines
-                        for financial-scale throughput.</p>
+                        for scalable throughput.</p>
                     <div class="interest-pills">
                         <span class="interest-pill">Quantization</span>
                         <span class="interest-pill">Pruning</span>
@@ -1190,7 +1157,7 @@
                     </div>
                 </div>
                 <div class="interest-panel" id="panel-health">
-                    <p>Applying deep learning to clinical challenges &mdash; predicting disease progression from medical
+                    <p>Applying deep learning to clinical challenges, predicting disease progression from medical
                         imaging, synthesizing X-rays from radiology reports, and segmenting tumors in 3D brain scans.
                     </p>
                     <div class="interest-pills">
