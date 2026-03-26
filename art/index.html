@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pooja Ravi</title>
+    <link href="https://fonts.cdnfonts.com/css/libertinus-mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #f5f0e8;
+            --cream-dim: #c8c0b2;
+            --gold: #c9a84c;
+            --gold-light: #dfc678;
+            --gold-dark: #a07d2e;
+            --wine: #7a3b4e;
+            --deep: #1a1410;
+            --card-bg: rgba(18, 14, 10, 0.82);
+            --card-border: rgba(201, 168, 76, 0.15);
+            --card-border-hover: rgba(201, 168, 76, 0.35);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--deep);
+            color: var(--cream);
+            font-family: 'Libertinus Mono', monospace;
+            font-weight: 400;
+            line-height: 1.75;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: var(--gold);
+            color: var(--deep);
+        }
+
+        /* ─── FLOATING BACKGROUND ─── */
+        .bg-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bg-image {
+            width: 120%;
+            height: 120%;
+            object-fit: cover;
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            animation: bgFloat 30s ease-in-out infinite;
+            opacity: 0.5;
+            filter: saturate(0.8) brightness(0.7);
+        }
+
+        @keyframes bgFloat {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            25% {
+                transform: translate(15px, -20px) scale(1.02);
+            }
+
+            50% {
+                transform: translate(-10px, 10px) scale(1.01);
+            }
+
+            75% {
+                transform: translate(10px, 15px) scale(1.03);
+            }
+        }
+
+        .bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background:
+                radial-gradient(ellipse at 20% 0%, rgba(201, 168, 76, 0.04) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 100%, rgba(122, 59, 78, 0.06) 0%, transparent 60%),
+                linear-gradient(180deg, rgba(26, 20, 16, 0.3) 0%, transparent 30%, transparent 70%, rgba(26, 20, 16, 0.5) 100%);
+            pointer-events: none;
+        }
+
+        /* ─── CONTENT LAYER ─── */
+        .content {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* ─── NAV ─── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 22px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(30px);
+            background: rgba(26, 20, 16, 0.7);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .nav-name {
+            font-family: 'Mea Culpa', cursive;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--cream-dim);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            padding: 8px 18px;
+            border-radius: 100px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+            background: rgba(201, 168, 76, 0.08);
+        }
+
+        .nav-links a.active {
+            color: var(--deep);
+            background: var(--gold);
+        }
+
+        .nav-divider {
+            width: 1px;
+            height: 20px;
+            background: var(--card-border);
+            margin: 0 10px;
+        }
+
+        /* ─── SECTIONS ─── */
+        section {
+            padding: 100px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            font-family: 'Mea Culpa', cursive;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .section-rule {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            margin-bottom: 50px;
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            padding-top: 140px;
+        }
+
+        .hero-name {
+            font-family: 'Mea Culpa', cursive;
+            font-size: clamp(4rem, 9vw, 8rem);
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 50px;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .hero-title {
+            font-family: 'Libertinus Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--cream-dim);
+            letter-spacing: 3px;
+            margin-bottom: 24px;
+            animation: fadeIn 1.2s ease-out 0.2s both;
+        }
+
+        .hero-tagline {
+            font-family: 'Libertinus Mono', monospace;
+            font-size: 0.95rem;
+            color: var(--cream-dim);
+            max-width: 520px;
+            letter-spacing: 0.5px;
+            line-height: 1.8;
+            animation: fadeIn 1.2s ease-out 0.3s both;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 14px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            animation: fadeIn 1.2s ease-out 0.4s both;
+        }
+
+        .hero-link {
+            font-family: 'Libertinus Mono', monospace;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 12px 30px;
+            border-radius: 100px;
+            transition: all 0.35s;
+        }
+
+        .hero-link.primary {
+            background: var(--gold);
+            color: var(--deep);
+        }
+
+        .hero-link.primary:hover {
+            background: var(--gold-light);
+            box-shadow: 0 6px 30px rgba(201, 168, 76, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .hero-link.ghost {
+            color: var(--cream-dim);
+            border: 1px solid var(--card-border);
+        }
+
+        .hero-link.ghost:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* ─── CARDS ─── */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 36px;
+            backdrop-filter: blur(20px);
+            transition: all 0.4s;
+        }
+
+        .card:hover {
+            border-color: var(--card-border-hover);
+            transform: translateY(-3px);
+        }
+
+        /* ─── EDUCATION ─── */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        .edu-degree {
+            font-family: 'Libertinus Mono', monospace;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--cream);
+            margin-bottom: 4px;
+        }
+
+        .edu-school {
+            font-size: 0.92rem;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+
+        .edu-date {
+            font-family: 'Libertinus Mono', monospace;
+            font-size: 0.82rem;
+            color: var(--cream-dim);
+            margin-bottom: 14px;
+        }
+
+        .edu-detail {
+            font-size: 0.88rem;
+            color: var(--cream-dim);
+            line-height: 1.7;
+        }
+
+        .award-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .award-tag {
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 5px 14px;
+            border-radius: 100px;
+            background: rgba(201, 168, 76, 0.1);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            color: var(--gold);
+            letter-spacing: 0.5px;
+        }
+
+        /* ─── EXPERIENCE TIMELINE ─── */
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--gold), var(--wine), transparent);
+        }
+
+        .tl-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .tl-item::before {
+            content: '';
+            position: absolute;
+            left: -56px;
+            top: 38px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gold);
+            border: 2px solid var(--deep);
+            box-shadow: 0 0 12px rgba(201, 168, 76, 0.3);
+        }
+
+        .tl-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 36px;
+            backdrop-filter: blur(20px);
+            transition: all 0.4s;
+        }
+
+        .tl-card:hover {
+            border-color: var(--card-border-hover);
+            transform: translateX(4px);
+        }
+
+        .tl-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .tl-role {
+            font-family: 'Libertinus Mono', monospace;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--cream);
+        }
+
+        .tl-date {
+            font-family: 'Libertinus Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--gold);
+            padding: 4px 14px;
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            border-radius: 100px;
+            white-space: nowrap;
+        }
+
+        .tl-company {
+            font-size: 0.9rem;
+            color: var(--gold-dark);
+            margin-bottom: 16px;
+        }
+
+        .tl-points {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .tl-points li {
+            position: relative;
+            padding-left: 18px;
+            font-size: 0.9rem;
+            color: var(--cream-dim);
+            line-height: 1.7;
+        }
+
+        .tl-points li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--gold);
+            opacity: 0.6;
+        }
+
+        .patent-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 3px 12px;
+            border-radius: 100px;
+            background: rgba(122, 59, 78, 0.2);
+            border: 1px solid rgba(122, 59, 78, 0.3);
+            color: #d4889e;
+        }
+
+        /* ─── PUBLICATIONS ─── */
+        .pub-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .pub-card {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .pub-num {
+            font-family: 'Libertinus Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--gold);
+            opacity: 0.4;
+            min-width: 45px;
+            line-height: 1;
+        }
+
+        .pub-title {
+            font-family: 'Libertinus Mono', monospace;
+            font-size: 1.05rem;
+            font-weight: 500;
+            font-style: italic;
+            color: var(--cream);
+            line-height: 1.6;
+            margin-bottom: 6px;
+        }
+
+        .pub-meta {
+            font-size: 0.8rem;
+            color: var(--cream-dim);
+        }
+
+        .pub-meta a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .pub-meta a:hover {
+            color: var(--gold-light);
+        }
+
+        /* ─── PROJECTS ─── */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .proj-name {
+            font-family: 'Libertinus Mono', monospace;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--cream);
+            margin-bottom: 10px;
+        }
+
+        .proj-name a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .proj-name a:hover {
+            color: var(--gold-light);
+        }
+
+        .proj-desc {
+            font-size: 0.88rem;
+            color: var(--cream-dim);
+            line-height: 1.7;
+        }
+
+        .proj-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 16px;
+        }
+
+        .proj-tag {
+            font-family: 'Libertinus Mono', monospace;
+            font-size: 0.72rem;
+            padding: 4px 12px;
+            border-radius: 100px;
+            border: 1px solid var(--card-border);
+            color: var(--cream-dim);
+        }
+
+
+
+        /* ─── AREAS OF INTEREST ─── */
+        .interest-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+        }
+
+        .interest-tab {
+            font-family: 'Libertinus Mono', monospace;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 10px 24px;
+            border-radius: 100px;
+            border: 1px solid var(--card-border);
+            color: var(--cream-dim);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .interest-tab:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .interest-tab.active {
+            background: var(--gold);
+            color: var(--deep);
+            border-color: var(--gold);
+        }
+
+        .interest-panel {
+            display: none;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 36px;
+            backdrop-filter: blur(20px);
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .interest-panel.active {
+            display: block;
+        }
+
+        .interest-panel p {
+            font-size: 0.92rem;
+            color: var(--cream-dim);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .interest-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .interest-pill {
+            padding: 8px 18px;
+            border-radius: 100px;
+            font-size: 0.82rem;
+            border: 1px solid var(--card-border);
+            color: var(--cream-dim);
+            background: rgba(18, 14, 10, 0.5);
+        }
+
+        /* ─── CONTACT ─── */
+        .contact-center {
+            text-align: center;
+            padding: 120px 60px;
+        }
+
+        .contact-center .section-heading {
+            font-size: 3.5rem;
+        }
+
+        .contact-sub {
+            font-family: 'Libertinus Mono', monospace;
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--cream-dim);
+            max-width: 440px;
+            margin: 0 auto 40px;
+        }
+
+        .contact-row {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 12px 26px;
+            border-radius: 100px;
+            border: 1px solid var(--card-border);
+            color: var(--cream-dim);
+            transition: all 0.3s;
+        }
+
+        .contact-link:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            text-align: center;
+            padding: 36px;
+            font-size: 0.75rem;
+            color: var(--cream-dim);
+            border-top: 1px solid var(--card-border);
+            font-family: 'Libertinus Mono', monospace;
+            letter-spacing: 1px;
+        }
+
+        /* ─── SCROLL REVEAL ─── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 900px) {
+            section {
+                padding: 80px 24px;
+            }
+
+            nav {
+                padding: 16px 20px;
+            }
+
+            .nav-links a {
+                font-size: 0.72rem;
+                padding: 6px 12px;
+            }
+
+            .hero-name {
+                font-size: 3.5rem;
+            }
+
+            .edu-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                padding-left: 36px;
+            }
+
+            .tl-item::before {
+                left: -42px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="bg-wrapper">
+        <img src="assets/bg.png" alt="" class="bg-image">
+    </div>
+    <div class="bg-overlay"></div>
+
+    <!-- Content -->
+    <div class="content">
+
+        <!-- Nav -->
+        <nav>
+            <div class="nav-name">Pooja Ravi</div>
+            <div class="nav-links">
+                <a href="#about" class="active">Home</a>
+                <a href="#education">Education</a>
+                <a href="#experience">Experience</a>
+                <a href="#publications">Papers</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <div class="nav-divider"></div>
+                <a href="blogs.html">Blogs</a>
+
+            </div>
+        </nav>
+
+        <!-- Hero -->
+        <section class="hero" id="about">
+            <div class="hero-name">Pooja Ravi</div>
+            <div class="hero-title">Machine Learning Engineer</div>
+            <p class="hero-tagline">
+                Perennially curious researcher with focus on generative modeling
+                and performance optimization. Building systems that see, read, and understand.
+            </p>
+
+            <div class="hero-location" style="
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 24px;
+            font-size: 0.85rem;
+            color: var(--cream-dim);
+            letter-spacing: 0.5px;
+            animation: fadeIn 1.2s ease-out 0.35s both;
+        ">
+                <span style="font-weight:700; font-size:0.88rem; color: var(--gold-light);">Toronto, Canada</span>
+                <span>MScAC (AI) @ University of Toronto | Vector Scholar in AI</span>
+            </div>
+
+            <div class="hero-links">
+                <a href="mailto:kuchan2001@gmail.com" class="hero-link primary">Get in Touch</a>
+                <a href="blogs.html" class="hero-link ghost">Read My Blogs</a>
+                <a href="#experience" class="hero-link ghost">View Work</a>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+            <div class="reveal">
+                <div class="section-heading">Education</div>
+                <div class="section-rule"></div>
+            </div>
+
+            <div class="edu-grid">
+                <div class="card reveal">
+                    <div class="edu-degree">Master of Science in Applied Computing</div>
+                    <div class="edu-school">University of Toronto</div>
+                    <div class="edu-date">Sep 2023 &ndash; Jan 2025</div>
+                    <div class="edu-detail">
+                        Coursework: Computational Imaging (David Lindell), ML for Healthcare (Rahul G. Krishnan),
+                        Natural Language Computing (Gerald Penn), Visual &amp; Mobile Computing (Nandita Vijaykumar)
+                    </div>
+                    <div class="award-tags">
+                        <span class="award-tag">Vector Scholarship in AI</span>
+                        <span class="award-tag">Mitacs Globalink Fellowship</span>
+                    </div>
+                </div>
+
+                <div class="card reveal">
+                    <div class="edu-degree">B.Tech. Computer Science &amp; Engineering</div>
+                    <div class="edu-school">SRM Institute of Science and Technology, Chennai</div>
+                    <div class="edu-date">Jun 2019 &ndash; May 2023</div>
+                    <div class="edu-detail">
+                        Built a strong foundation in CS fundamentals, published 4 research papers,
+                        and developed deep expertise in computer vision and deep learning during undergrad.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience">
+            <div class="reveal">
+                <div class="section-heading">Experience</div>
+                <div class="section-rule"></div>
+            </div>
+
+            <div class="timeline">
+                <!-- Q2 -->
+                <div class="tl-item reveal">
+                    <div class="tl-card">
+                        <div class="tl-header">
+                            <div>
+                                <div class="tl-role">Machine Learning Engineer</div>
+                                <div class="tl-company">Q2 Software Inc. &mdash; Austin, USA (Remote)</div>
+                            </div>
+                            <span class="tl-date">May 2024 &ndash; Present</span>
+                        </div>
+                        <ul class="tl-points">
+                            <li>Independently led the signature verification project, building scalable end-to-end
+                                workflows for cheque signature comparison across a 200k image database. Trained
+                                variational autoencoders for embedding signature features, used triplet loss plus
+                                contrastive learning with Siamese networks, and fine-tuned multimodal LLMs for real-time
+                                visual similarity assessment.</li>
+                            <li>Contributed to an end-to-end cheque fraud prevention pipeline matching payee text.
+                                Trained LayoutLM, Swin+BART (Donut), and TrOCR on 100k+ cheque images &mdash; improved
+                                cross-modal alignment and text extraction by 8%, flagging rate by 4%, and reduced
+                                inference latency through model optimization. The system actively prevents fraud for
+                                over 270 financial institutions.</li>
+                            <li><span class="patent-tag">Patent Pending</span> &nbsp;Ideated and executed a scalable
+                                visual representation learning algorithm with a pretrained feature extractor and
+                                high-dimensional clustering to boost model robustness with cheque format diversity.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 16 Bit -->
+                <div class="tl-item reveal">
+                    <div class="tl-card">
+                        <div class="tl-header">
+                            <div>
+                                <div class="tl-role">Machine Learning Engineer</div>
+                                <div class="tl-company">16 Bit &mdash; Toronto, Canada (Part-time)</div>
+                            </div>
+                            <span class="tl-date">Oct 2023 &ndash; Mar 2024</span>
+                        </div>
+                        <ul class="tl-points">
+                            <li>Led a research project to predict the progression of knee osteoarthritis through time
+                                (~96 months into the future) using an image-to-image translation pipeline where X-ray
+                                images depict different grades of arthritis.</li>
+                            <li>Worked with GANs, contrastive learning, diffusion models, and utilized PyTorch Lightning
+                                distributed training and LoRA. Achieved ~10x speedup in training for 70k+ X-ray images
+                                and ~19% increase in image realism.</li>
+                            <li>Translated generated images into clinically relevant output mappings by collaborating
+                                with medical domain experts. Managed this high-impact project independently while
+                                pursuing a full-time master's degree.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Blunav -->
+                <div class="tl-item reveal">
+                    <div class="tl-card">
+                        <div class="tl-header">
+                            <div>
+                                <div class="tl-role">Computer Vision Intern</div>
+                                <div class="tl-company">Blunav Technologies &mdash; IIT Madras, India</div>
+                            </div>
+                            <span class="tl-date">Jun 2021 &ndash; Sep 2021</span>
+                        </div>
+                        <ul class="tl-points">
+                            <li>Automated the detection of aircraft turnaround processes after landing using real-time
+                                CCTV video feed. Built with AWS SageMaker for data ingestion, video/image processing,
+                                object detection, tracking, and real-time in-video distance calculation.</li>
+                            <li>Sped up real-time inference by 3x and achieved 11% increase in mAP for object detection
+                                using scaled-YOLOv4.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section id="research">
+            <div class="reveal">
+                <div class="section-heading">Research</div>
+                <div class="section-rule"></div>
+            </div>
+
+            <div class="timeline">
+                <div class="tl-item reveal">
+                    <div class="tl-card">
+                        <div class="tl-header">
+                            <div>
+                                <div class="tl-role">Mitacs Globalink Research Intern</div>
+                                <div class="tl-company">Athabasca University &mdash; Edmonton, Canada &middot;
+                                    Supervised by Dr. Ali Dewan</div>
+                            </div>
+                            <span class="tl-date">Jun 2022 &ndash; Sep 2022</span>
+                        </div>
+                        <ul class="tl-points">
+                            <li>Built a real-time student engagement detection pipeline using 3D residual,
+                                spatiotemporal convolutional networks for video analysis.</li>
+                            <li>Used frame classification and 3D mesh facial landmark tracking with ~10.4% increase in
+                                facial tracking performance and up to 12% decrease in latency via multiprocessing.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tl-item reveal">
+                    <div class="tl-card">
+                        <div class="tl-header">
+                            <div>
+                                <div class="tl-role">Undergraduate Researcher</div>
+                                <div class="tl-company">SRM IST &mdash; India &middot; Supervised by Dr. B.
+                                    Muruganantham &amp; Dr. Kottilingam K</div>
+                            </div>
+                            <span class="tl-date">Mar 2021 &ndash; Oct 2022</span>
+                        </div>
+                        <ul class="tl-points">
+                            <li>Built a driver safety monitoring system employing the Swin Transformer for road entity
+                                detection, physical distance estimation, and microsleep/drowsiness tracking.</li>
+                            <li>Developed precise 3D image segmentation networks using soft attention, residual blocks,
+                                and pyramid pooling, benchmarked on BraTS2020 for brain tumor region localization.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications">
+            <div class="reveal">
+                <div class="section-heading">Publications</div>
+                <div class="section-rule"></div>
+            </div>
+
+            <div class="pub-list">
+                <div class="card pub-card reveal">
+                    <div class="pub-num">I</div>
+                    <div>
+                        <div class="pub-title">&ldquo;An integrated document manipulation tool leveraging LLMs,
+                            transformers, and attention mechanism&rdquo;</div>
+                        <div class="pub-meta">A. Shukla, <span
+                                style="font-weight:700; font-size:0.88rem; color:var(--gold-light);">P. Ravi</span>, B.
+                            Arthi &mdash; AIP Conference Proceedings, April
+                            2023 &middot; <a href="https://doi.org/10.1063/5.0217040" target="_blank">View Paper
+                                &rarr;</a></div>
+                    </div>
+                </div>
+                <div class="card pub-card reveal">
+                    <div class="pub-num">II</div>
+                    <div>
+                        <div class="pub-title">&ldquo;Real-time Multi-Module Student Engagement Detection System&rdquo;
+                        </div>
+                        <div class="pub-meta"><span
+                                style="font-weight:700; font-size:0.88rem; color:var(--gold-light);">P. Ravi</span>, A.
+                            Dewan &mdash; ICCIS, NIT Delhi, December 2022 &middot; <a
+                                href="https://doi.org/10.1007/978-981-99-2100-3_22" target="_blank">View Paper
+                                &rarr;</a></div>
+                    </div>
+                </div>
+                <div class="card pub-card reveal">
+                    <div class="pub-num">III</div>
+                    <div>
+                        <div class="pub-title">&ldquo;Attention Mechanism, Linked Networks, and Pyramid Pooling Enabled
+                            3D Biomedical Image Segmentation&rdquo;</div>
+                        <div class="pub-meta"><span
+                                style="font-weight:700; font-size:0.88rem; color:var(--gold-light);">P. Ravi</span>, S.
+                            Roy, I. Dutta, K. Kottursamy &mdash; IEEE/ACIS SNPD, Taiwan,
+                            2022 &middot; <a href="https://doi.org/10.1109/SNPD54884.2022.10051771" target="_blank">View
+                                Paper &rarr;</a></div>
+                    </div>
+                </div>
+                <div class="card pub-card reveal">
+                    <div class="pub-num">IV</div>
+                    <div>
+                        <div class="pub-title">&ldquo;Real-time GPU-accelerated Driver Assistance System&rdquo;</div>
+                        <div class="pub-meta"><span
+                                style="font-weight:700; font-size:0.88rem; color:var(--gold-light);">P. Ravi</span>, A.
+                            Shukla, B. Muruganantham &mdash; RCAAI, November 2022 &middot;
+                            <a href="https://doi.org/10.1007/978-981-99-4634-1_64" target="_blank">View Paper &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <div class="reveal">
+                <div class="section-heading">Projects</div>
+                <div class="section-rule"></div>
+            </div>
+
+            <div class="projects-grid">
+                <div class="card reveal">
+                    <div class="proj-name"><a href="https://github.com/01pooja10/Sketch2D-To-Style3D"
+                            target="_blank">NeRF &mdash; 2D Sketch to 3D Stylization &rarr;</a></div>
+                    <div class="proj-desc">Convert 2D sketches to stylized 3D views using neural radiance fields.
+                        Employed image style transfer with NeRF trained from scratch (with few-shot learning) and
+                        CLIP-NeRF for text prompt-based stylization.</div>
+                    <div class="proj-tags">
+                        <span class="proj-tag">NeRF</span>
+                        <span class="proj-tag">CLIP</span>
+                        <span class="proj-tag">Style Transfer</span>
+                        <span class="proj-tag">Few-Shot</span>
+                    </div>
+                </div>
+                <div class="card reveal">
+                    <div class="proj-name"><a href="https://github.com/01pooja10/MobileGen" target="_blank">MobileGen
+                            &mdash; Optimizing Diffusion Models &rarr;</a></div>
+                    <div class="proj-desc">Trained an optimized DDPM on cloud GPUs for accelerated mobile inference.
+                        Employed quantization-aware training, knowledge distillation, pruning, and U-Net modifications.
+                        Achieved 20% faster inference and 14% lower GFLOPs.</div>
+                    <div class="proj-tags">
+                        <span class="proj-tag">DDPM</span>
+                        <span class="proj-tag">Quantization</span>
+                        <span class="proj-tag">Distillation</span>
+                        <span class="proj-tag">Pruning</span>
+                    </div>
+                </div>
+                <div class="card reveal">
+                    <div class="proj-name"><a href="https://github.com/01pooja10/echo-charlie"
+                            target="_blank">EchoCharlie &rarr;</a></div>
+                    <div class="proj-desc">[Winning entry for the Boson AI Hackathon hosted in October 2025] Echo
+                        Charlie is a multimodal voice restoration pipeline that rebuilds lost or corrupted audio in
+                        videos using visual speech recognition, transcript cleanup, and AI-driven voice cloning models.
+                    </div>
+                    <div class="proj-tags">
+                        <span class="proj-tag">Voice Cloning</span>
+                        <span class="proj-tag">Audio RAG</span>
+                        <span class="proj-tag">Embedding Search</span>
+                    </div>
+                </div>
+                <div class="card reveal">
+                    <div class="proj-name"><a href="https://github.com/01pooja10/multimodal-xray" target="_blank">RayGen
+                            &rarr;</a></div>
+                    <div class="proj-desc">Cross-modal pipeline aligning vision and language embeddings to reconstruct
+                        latent representations for chest X-ray synthesis. Masked images concatenated with BERT-processed
+                        radiology reports produce synthesized X-rays.</div>
+                    <div class="proj-tags">
+                        <span class="proj-tag">Multimodal Medical AI</span>
+                        <span class="proj-tag">Vision Language Embedding</span>
+                        <span class="proj-tag">Masked Transformers</span>
+                    </div>
+                </div>
+                <div class="card reveal">
+                    <div class="proj-name"><a href="https://github.com/01pooja10/TumorSegmentation3D" target="_blank">
+                            3D Tumor Segmentation &rarr;</a></div>
+                    <div class="proj-desc">A research project to help detect and segment tumorous regions of the brain
+                        with three segmentation architectures for multiclass semantic segmentation
+                        utilizing soft attention mechanism, pyramid pooling to work with 3D brain MRI images</div>
+                    <div class="proj-tags">
+                        <span class="proj-tag">3D Vision</span>
+                        <span class="proj-tag">MRI</span>
+                        <span class="proj-tag">Segmentation</span>
+                        <span class="proj-tag">U-Net</span>
+                    </div>
+                </div>
+                <div class="card reveal">
+                    <div class="proj-name"><a href="https://github.com/01pooja10/EasyDocsResearch"
+                            target="_blank">EasyDocs &rarr;</a></div>
+                    <div class="proj-desc">All-in-one academic utility: technical text summarization, document OCR and
+                        parsing, keyword extraction, similar-publications recommender, and text-to-speech for easier
+                        document understanding.</div>
+                    <div class="proj-tags">
+                        <span class="proj-tag">NLP</span>
+                        <span class="proj-tag">OCR</span>
+                        <span class="proj-tag">TTS</span>
+                        <span class="proj-tag">Recommender</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Areas of Interest -->
+        <section id="skills">
+            <div class="reveal">
+                <div class="section-heading">Areas of Interest</div>
+                <div class="section-rule"></div>
+            </div>
+
+            <div class="interest-tabs reveal">
+                <button class="interest-tab active" data-tab="cv">Computer Vision</button>
+                <button class="interest-tab" data-tab="genai">Generative AI</button>
+                <button class="interest-tab" data-tab="multimodal">Multimodal AI</button>
+                <button class="interest-tab" data-tab="optim">Model Optimization</button>
+                <button class="interest-tab" data-tab="health">AI for Healthcare</button>
+            </div>
+
+            <div class="reveal">
+                <div class="interest-panel active" id="panel-cv">
+                    <p>Building systems that perceive, track, and reason about the visual world in real time,
+                        from object detection in live CCTV feeds to 3D scene reconstruction with neural radiance fields.
+                    </p>
+                    <div class="interest-pills">
+                        <span class="interest-pill">Object Detection &amp; Tracking</span>
+                        <span class="interest-pill">Semantic Segmentation</span>
+                        <span class="interest-pill">OCR</span>
+                        <span class="interest-pill">Video Processing</span>
+                        <span class="interest-pill">NeRFs</span>
+                        <span class="interest-pill">OpenCV</span>
+                        <span class="interest-pill">YOLOv4</span>
+                    </div>
+                </div>
+                <div class="interest-panel" id="panel-genai">
+                    <p>Exploring the frontier of content generation by training diffusion models from scratch
+                        to image-to-image translation pipelines that predict medical outcomes years into the future.</p>
+                    <div class="interest-pills">
+                        <span class="interest-pill">VAE</span>
+                        <span class="interest-pill">DCGAN</span>
+                        <span class="interest-pill">Pix2Pix</span>
+                        <span class="interest-pill">CycleGAN</span>
+                        <span class="interest-pill">StyleGAN</span>
+                        <span class="interest-pill">VQ-GAN</span>
+                        <span class="interest-pill">DDPM</span>
+                    </div>
+                </div>
+                <div class="interest-panel" id="panel-multimodal">
+                    <p>Aligning vision and language representations to enable cross-modal reasoning from
+                        fine-tuning multimodal LLMs for visual similarity to fusing radiology reports with X-ray
+                        embeddings.</p>
+                    <div class="interest-pills">
+                        <span class="interest-pill">LayoutLM</span>
+                        <span class="interest-pill">TrOCR</span>
+                        <span class="interest-pill">Donut (Swin+BART)</span>
+                        <span class="interest-pill">CLIP</span>
+                        <span class="interest-pill">BERT</span>
+                        <span class="interest-pill">Multimodal LLMs</span>
+                    </div>
+                </div>
+                <div class="interest-panel" id="panel-optim">
+                    <p>Making large models fast and deployable by compressing diffusion models for mobile
+                        inference, accelerating training across distributed GPUs, and optimizing production pipelines
+                        for scalable throughput.</p>
+                    <div class="interest-pills">
+                        <span class="interest-pill">Quantization</span>
+                        <span class="interest-pill">Pruning</span>
+                        <span class="interest-pill">Knowledge Distillation</span>
+                        <span class="interest-pill">Distributed Training</span>
+                        <span class="interest-pill">LoRA</span>
+                        <span class="interest-pill">TensorRT</span>
+                    </div>
+                </div>
+                <div class="interest-panel" id="panel-health">
+                    <p>Applying deep learning to clinical challenges, predicting disease progression from medical
+                        imaging, synthesizing X-rays from radiology reports, and segmenting tumors in 3D brain scans.
+                    </p>
+                    <div class="interest-pills">
+                        <span class="interest-pill">Medical Imaging</span>
+                        <span class="interest-pill">X-ray Synthesis</span>
+                        <span class="interest-pill">3D Segmentation</span>
+                        <span class="interest-pill">Time Series</span>
+                        <span class="interest-pill">Clinical Translation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact-center" id="contact">
+            <div class="reveal">
+                <div class="section-heading">Let&rsquo;s Connect</div>
+                <div class="section-rule" style="margin: 0 auto 20px;"></div>
+                <p class="contact-sub">
+                    Whether it concerns ML research, collaboration, or simply a
+                    good conversation, I would love to hear from you &hearts;
+                </p>
+            </div>
+
+            <div class="contact-row reveal">
+                <a href="mailto:kuchan2001@gmail.com" class="contact-link">Email</a>
+                <a href="https://github.com/01pooja10" target="_blank" class="contact-link">GitHub</a>
+                <a href="https://scholar.google.com/citations?user=avdGhPUAAAAJ&hl=en" target="_blank"
+                    class="contact-link">Google Scholar</a>
+                <a href="https://www.kaggle.com/poojaravi01" target="_blank" class="contact-link">Kaggle</a>
+                <a href="https://medium.com/@pooja_ravi" target="_blank" class="contact-link">Medium</a>
+                <a href="https://www.linkedin.com/in/pooja-ravi01/" target="_blank" class="contact-link">LinkedIn</a>
+            </div>
+        </section>
+
+        <footer>Pooja Ravi &copy; 2026</footer>
+    </div>
+
+    <script>
+        const revealEls = document.querySelectorAll('.reveal');
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach((e, i) => {
+                if (e.isIntersecting) {
+                    setTimeout(() => e.target.classList.add('visible'), i * 60);
+                    obs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(el => obs.observe(el));
+
+        // Active nav on scroll + background blur
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+        const bgImg = document.querySelector('.bg-image');
+        window.addEventListener('scroll', () => {
+            let cur = '';
+            sections.forEach(s => { if (scrollY >= s.offsetTop - 160) cur = s.id; });
+            navLinks.forEach(a => {
+                a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+            });
+
+            // Blur and darken background as user scrolls
+            const scrollPct = Math.min(scrollY / (window.innerHeight * 1.5), 1);
+            const blur = scrollPct * 8;          // max 8px blur
+            const brightness = 0.7 - scrollPct * 0.3;  // 0.7 → 0.4
+            bgImg.style.filter = `saturate(0.85) brightness(${brightness}) blur(${blur}px)`;
+        });
+
+        // Interest tabs
+        document.querySelectorAll('.interest-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.interest-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.interest-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
