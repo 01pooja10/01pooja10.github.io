@@ -51,7 +51,7 @@
       grid-template-columns: minmax(0, 1fr) 180px;
       gap: 40px;
       align-items: start;
-      padding: 64px 0 76px;
+      padding: 64px 0 48px;
     }
     h1 { margin: 0 0 2px; font-size: 34px; line-height: 1.16; letter-spacing: -.035em; font-weight: 700; }
     .tagline { margin: 0 0 11px; color: var(--text-soft); font-size: 16.5px; }
@@ -85,18 +85,19 @@
     .social-links a:hover { background: var(--button-hover); text-decoration: none; }
     .social-links svg { width: 15px; height: 15px; flex: none; fill: currentColor; }
 
-    #publications { padding: 50px 0 60px; scroll-margin-top: 24px; }
+    #publications { padding: 34px 0 60px; scroll-margin-top: 24px; }
     .section-title { margin: 0; color: var(--text-mute); font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
     .section-rule { height: 1px; margin: 13px 0 32px; background: var(--line); }
     .publication-list { list-style: none; margin: 0; padding: 0; }
-    .publication { margin: 0 0 38px; }
+    .publication { margin: 0 -14px 24px; padding: 14px; border-radius: 12px; transition: background .2s ease, box-shadow .2s ease, transform .2s ease; }
     .publication:last-child { margin-bottom: 0; }
-    .publication--featured { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 22px; align-items: start; }
+    .publication:hover { background: var(--bg-soft); box-shadow: 0 8px 24px rgba(28, 31, 36, .08); transform: translateY(-2px); }
+    .publication--featured { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 22px; align-items: start; }
     .publication-visual { margin: 0; }
     .publication-visual video {
       display: block;
-      width: 210px;
-      height: 105px;
+      width: 260px;
+      height: 130px;
       border: 1px solid var(--line);
       border-radius: 9px;
       object-fit: cover;
@@ -104,7 +105,7 @@
     }
     .publication-visual img {
       display: block;
-      width: 210px;
+      width: 260px;
       height: auto;
       border: 1px solid var(--line);
       border-radius: 9px;
@@ -114,16 +115,19 @@
     .publication p strong { color: var(--text); font-weight: 600; }
     .publication .publication-meta { color: var(--text-mute); font-style: italic; }
     .publication-links { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 5px; font-size: 14px; }
-    .publication-links a { color: var(--text-soft); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
-    .publication-links a:hover { color: var(--text); text-decoration-color: var(--text); }
+    .publication-links a { color: #1261c9; font-weight: 500; text-decoration: underline; text-decoration-color: #9fc3ee; text-underline-offset: 3px; transition: color .15s ease, text-decoration-color .15s ease; }
+    .publication-links a:hover { color: #084b9f; text-decoration-color: currentColor; }
 
     #projects { padding: 0 0 80px; scroll-margin-top: 24px; }
     .project-list { list-style: none; margin: 0; padding: 0; }
-    .project { margin: 0 0 31px; }
+    .project { margin: 0 -14px 24px; padding: 14px; border-radius: 12px; transition: background .2s ease, box-shadow .2s ease, transform .2s ease; }
     .project:last-child { margin-bottom: 0; }
-    .project--featured { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 22px; align-items: start; }
+    .project:hover { background: var(--bg-soft); box-shadow: 0 8px 24px rgba(28, 31, 36, .08); transform: translateY(-2px); }
+    .project--featured { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 22px; align-items: start; }
     .project-visual { margin: 0; }
-    .project-visual img { display: block; width: 210px; height: 105px; border: 1px solid var(--line); border-radius: 9px; object-fit: contain; background: var(--bg-soft); }
+    .project-visual img { display: block; width: 260px; height: 130px; border: 1px solid var(--line); border-radius: 9px; object-fit: contain; background: var(--bg-soft); }
+    .publication-visual img, .publication-visual video, .project-visual img { transition: transform .2s ease, box-shadow .2s ease; }
+    .publication:hover .publication-visual img, .publication:hover .publication-visual video, .project:hover .project-visual img { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(28, 31, 36, .14); }
     .project-title { color: var(--text); font-size: 16.5px; line-height: 1.4; font-weight: 600; }
     .project p { margin: 5px 0 0; color: var(--text-soft); font-size: 14.5px; line-height: 1.55; }
     .project .project-meta { color: var(--text-mute); font-style: italic; }
@@ -133,9 +137,9 @@
 
     @media (max-width: 620px) {
       .header-inner { align-items: flex-start; flex-direction: column; gap: 3px; padding-top: 11px; padding-bottom: 12px; }
-      .intro { grid-template-columns: 1fr; gap: 25px; padding: 52px 0 54px; }
+      .intro { grid-template-columns: 1fr; gap: 25px; padding: 52px 0 40px; }
       .portrait { grid-row: 1; width: 132px; height: 132px; margin: 0; }
-      #publications { padding-top: 36px; }
+      #publications { padding-top: 28px; }
       .publication--featured { grid-template-columns: 150px minmax(0, 1fr); gap: 14px; }
       .publication-visual video { width: 150px; height: 75px; }
       .publication-visual img { width: 150px; }
@@ -282,7 +286,7 @@
     </section>
 
     <footer>
-      <a href="mailto:pooja@cs.toronto.edu">pooja@cs.toronto.edu</a>
+      <span>pooja at cs dot toronto dot edu</span>
       <span>Design inspired by <a href="https://github.com/mavroudisv/plain-academic">Plain Academic</a></span>
     </footer>
   </main>
