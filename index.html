@@ -82,7 +82,7 @@
     .social-links a:hover { background: var(--button-hover); text-decoration: none; }
     .social-links svg { width: 15px; height: 15px; flex: none; fill: currentColor; }
 
-    #publications { padding: 50px 0 75px; scroll-margin-top: 24px; }
+    #publications { padding: 50px 0 60px; scroll-margin-top: 24px; }
     .section-title { margin: 0; color: var(--text-mute); font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
     .section-rule { height: 1px; margin: 13px 0 32px; background: var(--line); }
     .publication-list { list-style: none; margin: 0; padding: 0; }
@@ -114,6 +114,14 @@
     .publication-links a { color: var(--text-soft); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
     .publication-links a:hover { color: var(--text); text-decoration-color: var(--text); }
 
+    #projects { padding: 0 0 80px; scroll-margin-top: 24px; }
+    .project-list { list-style: none; margin: 0; padding: 0; }
+    .project { margin: 0 0 31px; }
+    .project:last-child { margin-bottom: 0; }
+    .project-title { color: var(--text); font-size: 16.5px; line-height: 1.4; font-weight: 600; }
+    .project p { margin: 5px 0 0; color: var(--text-soft); font-size: 14.5px; line-height: 1.55; }
+    .project .project-meta { color: var(--text-mute); font-style: italic; }
+
     footer { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 20px 0 44px; border-top: 1px solid var(--line); color: var(--text-mute); font-size: 13px; }
     footer a { color: var(--text-mute); }
 
@@ -142,6 +150,7 @@
       <nav class="site-nav" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
       </nav>
     </div>
   </header>
@@ -215,6 +224,26 @@
           </div>
         </li>
       </ol>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="section-title">Projects</h2>
+      <div class="section-rule" aria-hidden="true"></div>
+      <ul class="project-list">
+        <li class="project">
+          <a class="project-title" href="https://github.com/ikozl090/echo-charlie">Echo Charlie</a>
+          <p class="project-meta">Boson AI Hackathon winner · October 2025</p>
+          <p>A multimodal pipeline that restores speech to muted video using lip reading, transcript cleanup, and voice synthesis.</p>
+        </li>
+        <li class="project">
+          <a class="project-title" href="https://github.com/01pooja10/Sketch2D-To-Style3D">NeRF: 2D Sketch to 3D Stylization</a>
+          <p>Turns grayscale sketches into stylized 3D views using neural radiance fields, few-shot learning, and CLIP-NeRF.</p>
+        </li>
+        <li class="project">
+          <a class="project-title" href="https://github.com/01pooja10/MobileGen">MobileGen: Optimizing Diffusion Models</a>
+          <p>Optimizes diffusion models for mobile inference through quantization-aware training, distillation, and pruning.</p>
+        </li>
+      </ul>
     </section>
 
     <footer>

@@ -1,5 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
-  <title id="title">Pooja Ravi</title>
-  <rect x="2" y="2" width="60" height="60" rx="15" fill="#1c1f24"/>
-  <text x="32" y="43" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" letter-spacing="-2" text-anchor="middle">PR</text>
+  <title id="title">Pooja Ravi pasta icon</title>
+  <path d="M7 32c2 17 11 28 25 28s23-11 25-28Z" fill="#fffaf1" stroke="#2e3033" stroke-width="2.5" stroke-linejoin="round"/>
+  <ellipse cx="32" cy="31" rx="25" ry="8" fill="#fffaf1" stroke="#2e3033" stroke-width="2.5"/>
+  <path d="M13 30c0-10 8-18 19-18 12 0 19 8 19 18-5 4-32 5-38 0Z" fill="#f4ca60" stroke="#bd8735" stroke-width="1.8"/>
+  <path d="M17 29c3-6 9-2 10-8 1-5 7-3 8 1 1 4 6 1 7-3M17 25c4-4 5-7 11-5M24 31c7-3 11 4 18-2M34 14c4 4 7 4 11 11" fill="none" stroke="#fff1a5" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M23 25c3-4 7-1 11-4 4-2 7 2 6 5-1 2-5 2-8 3-5 2-8 0-9-4Z" fill="#d65843"/>
+  <path d="M8 33c3 15 12 26 24 26s21-11 24-26c-8 4-40 4-48 0Z" fill="#fffaf1" stroke="#2e3033" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="32" y="53" fill="#2e3033" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" letter-spacing="-1.4" text-anchor="middle">PR</text>
 </svg>
