@@ -56,18 +56,13 @@
     .intro p:not(.tagline) { margin: 0 0 17px; color: var(--text-soft); }
     .intro p:last-of-type { margin-bottom: 0; }
     .portrait {
-      display: grid;
-      place-items: center;
+      display: block;
       width: 180px;
       height: 180px;
       margin-top: 3px;
       border-radius: 50%;
-      background: #f0f2f4;
-      color: #626d7a;
-      font-size: 52px;
-      font-weight: 700;
-      letter-spacing: -.08em;
-      user-select: none;
+      object-fit: cover;
+      object-position: 50% 38%;
     }
     .social-links { display: flex; flex-wrap: wrap; gap: 7px; list-style: none; margin: 23px 0 0; padding: 0; }
     .social-links a {
@@ -117,7 +112,7 @@
     @media (max-width: 620px) {
       .header-inner { align-items: flex-start; flex-direction: column; gap: 3px; padding-top: 11px; padding-bottom: 12px; }
       .intro { grid-template-columns: 1fr; gap: 25px; padding: 66px 0 54px; }
-      .portrait { grid-row: 1; width: 132px; height: 132px; margin: 0; font-size: 38px; }
+      .portrait { grid-row: 1; width: 132px; height: 132px; margin: 0; }
       #publications { padding-top: 36px; }
       .publication--featured { grid-template-columns: 150px minmax(0, 1fr); gap: 14px; }
       .publication-visual video { width: 150px; height: 75px; }
@@ -157,7 +152,7 @@
           <li><a href="https://x.com/pooja_ravioli"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.21-6.82-5.97 6.82H1.68l7.73-8.84L1.25 2.25h6.82l4.71 6.23Zm-1.16 17.52h1.83L7.01 4.13H5.04Z"/></svg>Twitter</a></li>
         </ul>
       </div>
-      <div class="portrait" role="img" aria-label="Placeholder portrait with Pooja Ravi's initials">PR</div>
+      <img class="portrait" src="assets/pooja-portrait.jpg" alt="Portrait of Pooja Ravi" width="180" height="180">
     </section>
 
     <section id="publications" aria-labelledby="publications-title">
