@@ -1,297 +1,264 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Pooja Ravi is a machine learning engineer working on computer vision, generative models, and model optimization.">
-    <title>Pooja Ravi — Machine Learning Engineer</title>
-    <style>
-    :root { color-scheme: light; --ink: #24272d; --body: #555c68; --muted: #747b85; --link: #35618c; --line: #e5e8ed; --pill: #f8f9fb; }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pooja Ravi is a machine learning engineer working on computer vision and generative models.">
+  <title>Pooja Ravi — Machine Learning Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #ffffff;
+      --bg-soft: #f6f7f9;
+      --text: #1c1f24;
+      --text-soft: #5a6270;
+      --text-mute: #858d9a;
+      --line: #e5e8ec;
+      --accent: #0b5fbf;
+      --portrait-bg: #e9f0f7;
+      --portrait-ink: #426385;
+      --maxw: 820px;
+    }
+
+    :root[data-palette="plum"] {
+      --bg: #fcfaf8;
+      --bg-soft: #f6eef1;
+      --text: #2d252b;
+      --text-soft: #665b63;
+      --text-mute: #8b7e85;
+      --line: #e9dee4;
+      --accent: #94476a;
+      --portrait-bg: #f1e4eb;
+      --portrait-ink: #7b4a66;
+    }
+
+    :root[data-palette="forest"] {
+      --bg: #f9fbf8;
+      --bg-soft: #edf4ed;
+      --text: #243129;
+      --text-soft: #58665c;
+      --text-mute: #7f8e82;
+      --line: #dfe9e0;
+      --accent: #2d7256;
+      --portrait-bg: #e6f0e7;
+      --portrait-ink: #3e7253;
+    }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; background: #fff; color: var(--body); font: 16px/1.62 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-    a { color: var(--link); text-decoration: none; }
-    a:hover, a:focus-visible { text-decoration: underline; }
-    a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
-    .shell { max-width: 850px; margin: 0 auto; padding: 0 24px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 400 16px/1.65 Inter, -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .shell { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
     .site-header { border-bottom: 1px solid var(--line); }
-    .header-inner { min-height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { color: var(--ink); font-weight: 700; font-size: 16px; white-space: nowrap; }
-    .nav-links { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; }
-    .nav-links a { color: var(--body); font-size: 15px; }
-    main { padding-top: 65px; }
-    .intro { display: grid; grid-template-columns: minmax(0, 1fr) 190px; gap: 50px; align-items: start; padding-bottom: 64px; }
-    h1 { color: var(--ink); font-size: 34px; line-height: 1.2; letter-spacing: -.035em; margin: 0 0 3px; }
-    .role { margin: 0 0 18px; font-size: 17px; }
-    .intro p { margin: 0 0 16px; }
-    .intro .interests { margin-bottom: 20px; }
-    .portrait { width: 180px; height: 180px; display: grid; place-items: center; border-radius: 50%; margin: 4px auto 0; background: #e7edf4; color: #45617d; font-size: 52px; font-weight: 700; letter-spacing: -.08em; user-select: none; }
-    .social-links { display: flex; flex-wrap: wrap; gap: 7px; padding: 0; margin: 22px 0 0; list-style: none; }
-    .social-links a { display: block; border: 1px solid var(--line); border-radius: 999px; padding: 4px 13px; background: var(--pill); color: var(--body); font-size: 14px; white-space: nowrap; }
-    .social-links a:hover { border-color: #c6d3e0; background: #f0f5fa; text-decoration: none; }
-    section { scroll-margin-top: 26px; padding: 45px 0 50px; border-top: 1px solid var(--line); }
-    .section-title { color: var(--ink); font-size: 21px; letter-spacing: -.02em; margin: 0 0 26px; }
-    .publication-list { list-style: none; padding: 0; margin: 0; }
-    .publication { margin: 0 0 32px; }
+    .header-inner { min-height: 57px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { color: var(--text); font-size: 16px; font-weight: 600; white-space: nowrap; }
+    .site-nav { display: flex; gap: 22px; }
+    .site-nav a { color: var(--text-soft); font-size: 14.5px; font-weight: 500; }
+
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 180px;
+      gap: 40px;
+      align-items: start;
+      padding: 86px 0 76px;
+    }
+    h1 { margin: 0 0 2px; font-size: 34px; line-height: 1.16; letter-spacing: -.035em; font-weight: 700; }
+    .tagline { margin: 0 0 20px; color: var(--text-soft); font-size: 16.5px; }
+    .intro p:not(.tagline) { margin: 0 0 17px; color: var(--text-soft); }
+    .intro p:last-of-type { margin-bottom: 0; }
+    .portrait {
+      display: grid;
+      place-items: center;
+      width: 180px;
+      height: 180px;
+      margin-top: 3px;
+      border-radius: 50%;
+      background: var(--portrait-bg);
+      color: var(--portrait-ink);
+      font-size: 52px;
+      font-weight: 700;
+      letter-spacing: -.08em;
+      user-select: none;
+    }
+    .social-links { display: flex; flex-wrap: wrap; gap: 7px; list-style: none; margin: 23px 0 0; padding: 0; }
+    .social-links a {
+      display: block;
+      padding: 4px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--bg-soft);
+      color: var(--text-soft);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .social-links a:hover { color: var(--accent); text-decoration: none; border-color: var(--accent); }
+
+    #publications { padding: 50px 0 75px; scroll-margin-top: 24px; }
+    .section-title { margin: 0; color: var(--text-mute); font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+    .section-rule { height: 1px; margin: 13px 0 32px; background: var(--line); }
+    .publication-list { list-style: none; margin: 0; padding: 0; }
+    .publication { margin: 0 0 38px; }
     .publication:last-child { margin-bottom: 0; }
-    .publication-title { font-weight: 700; font-size: 17px; }
-    .publication p { margin: 3px 0; font-size: 14.5px; }
-    .publication strong { color: var(--ink); font-weight: 600; }
-    .publication .publication-meta { color: var(--muted); font-style: italic; }
-    .paper-link { font-size: 14px; }
-    .proj-entry, .exp-entry, .edu-entry { margin-bottom: 27px; }
-    .proj-entry:last-child, .exp-entry:last-child, .edu-entry:last-child { margin-bottom: 0; }
-    .proj-name, .edu-degree, .exp-role { font-size: 16px; color: var(--ink); font-weight: 650; }
-    .proj-award { color: var(--muted); font-size: 14px; margin-left: 6px; }
-    .proj-desc { margin-top: 4px; font-size: 15px; }
-    .exp-header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
-    .exp-date, .edu-date { color: var(--muted); font-size: 14px; white-space: nowrap; }
-    .exp-company, .edu-school { font-size: 15px; }
-    .exp-points { padding-left: 18px; margin: 9px 0 0; font-size: 15px; }
-    .exp-points li { margin: 4px 0; }
-    .edu-detail, .skills-block { font-size: 15px; }
-    .award-inline, .patent-note { color: var(--link); }
-    .skills-block { line-height: 1.9; }
-    .skills-block strong { color: var(--ink); }
-    footer { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; padding: 22px 0 45px; }
-    footer a { color: var(--muted); }
-    @media (max-width: 650px) { .header-inner { align-items: flex-start; flex-direction: column; gap: 4px; padding-top: 12px; padding-bottom: 12px; } .nav-links { gap: 14px; } .nav-links a { font-size: 14px; } main { padding-top: 38px; } .intro { grid-template-columns: 1fr; gap: 20px; padding-bottom: 42px; } .portrait { grid-row: 1; width: 112px; height: 112px; margin: 0; font-size: 32px; } h1 { font-size: 30px; } section { padding: 35px 0 40px; } .exp-header { display: block; } .exp-date { display: block; } }
+    .publication--featured { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 22px; align-items: start; }
+    .publication-visual { margin: 0; }
+    .publication-visual video {
+      display: block;
+      width: 210px;
+      height: 105px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      object-fit: cover;
+      background: var(--bg-soft);
+    }
+    .publication-visual figcaption { margin-top: 5px; color: var(--text-mute); font-size: 11px; line-height: 1.3; }
+    .publication-title { color: var(--text); font-size: 16.5px; line-height: 1.4; font-weight: 600; }
+    .publication p { margin: 4px 0 0; color: var(--text-soft); font-size: 14.5px; line-height: 1.5; }
+    .publication p strong { color: var(--text); font-weight: 600; }
+    .publication .publication-meta { color: var(--text-mute); font-style: italic; }
+    .publication-links { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 5px; font-size: 14px; }
+
+    footer { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 20px 0 44px; border-top: 1px solid var(--line); color: var(--text-mute); font-size: 13px; }
+    footer a { color: var(--text-mute); }
+
+    @media (max-width: 620px) {
+      .header-inner { align-items: flex-start; flex-direction: column; gap: 3px; padding-top: 11px; padding-bottom: 12px; }
+      .intro { grid-template-columns: 1fr; gap: 25px; padding: 66px 0 54px; }
+      .portrait { grid-row: 1; width: 132px; height: 132px; margin: 0; font-size: 38px; }
+      #publications { padding-top: 36px; }
+      .publication--featured { grid-template-columns: 150px minmax(0, 1fr); gap: 14px; }
+      .publication-visual video { width: 150px; height: 75px; }
+    }
+    @media (max-width: 390px) {
+      .shell { padding: 0 18px; }
+      .publication--featured { grid-template-columns: 1fr; gap: 12px; }
+      .publication-visual video { width: 210px; height: 105px; }
+    }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-</style>
+  </style>
+  <script>
+    const palette = new URLSearchParams(location.search).get("palette");
+    if (palette === "plum" || palette === "forest") {
+      document.documentElement.dataset.palette = palette;
+    }
+  </script>
 </head>
 <body>
-    <header class="site-header">
-        <div class="shell header-inner">
-            <a class="brand" href="#about">Pooja Ravi</a>
-            <nav class="nav-links" aria-label="Main navigation">
-                <a href="#about">About</a>
-                <a href="#publications">Publications</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-            </nav>
-        </div>
-    </header>
-    <main class="shell">
-        <div class="intro" id="about">
-            <div>
-                <h1>Pooja Ravi</h1>
-                <p class="role">Machine Learning Engineer · Toronto, Canada</p>
-                <p>I work on computer vision, generative models, and practical machine learning systems. My experience spans visual representation learning, multimodal pipelines, and model optimization.</p>
-                <p>I'm a graduate of the University of Toronto's MScAC program in AI and a Vector Scholar. At Q2 Software, I work on signature verification and document understanding.</p>
-                <p class="interests">My research interests include generative modeling, 3D vision, representation learning, and efficient models.</p>
-                <ul class="social-links" aria-label="Contact and profiles">
-                    <li><a href="mailto:kuchan2001@gmail.com">Email</a></li>
-                    <li><a href="https://scholar.google.com/citations?user=avdGhPUAAAAJ&amp;hl=en">Google Scholar</a></li>
-                    <li><a href="https://github.com/01pooja10">GitHub</a></li>
-                    <li><a href="https://www.linkedin.com/in/pooja-ravi01/">LinkedIn</a></li>
-                    <li><a href="https://www.kaggle.com/poojaravi01">Kaggle</a></li>
-                </ul>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#about">Pooja Ravi</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="intro" id="about" aria-labelledby="page-title">
+      <div>
+        <h1 id="page-title">Pooja Ravi</h1>
+        <p class="tagline">Machine Learning Engineer · Toronto, Canada</p>
+        <p>I work on computer vision, generative models, and practical machine learning systems. My experience spans visual representation learning, multimodal pipelines, and model optimization.</p>
+        <p>I'm a graduate of the University of Toronto's MScAC program in AI and a Vector Scholar. At Q2 Software, I work on signature verification and document understanding.</p>
+        <p>My research interests include generative modeling, 3D vision, representation learning, and efficient models.</p>
+        <ul class="social-links" aria-label="Contact and profiles">
+          <li><a href="mailto:kuchan2001@gmail.com">Email</a></li>
+          <li><a href="https://scholar.google.com/citations?user=avdGhPUAAAAJ&amp;hl=en">Google Scholar</a></li>
+          <li><a href="https://github.com/01pooja10">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/pooja-ravi01/">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div class="portrait" role="img" aria-label="Placeholder portrait with Pooja Ravi's initials">PR</div>
+    </section>
+
+    <section id="publications" aria-labelledby="publications-title">
+      <h2 id="publications-title" class="section-title">Publications</h2>
+      <div class="section-rule" aria-hidden="true"></div>
+      <ol class="publication-list">
+        <li class="publication publication--featured">
+          <figure class="publication-visual">
+            <video class="publication-video" muted loop playsinline preload="metadata" poster="assets/publications/proxypose-poster.png" aria-label="ProxyPose baseball tracking demonstration">
+              <source src="assets/publications/proxypose-preview.mp4" type="video/mp4">
+            </video>
+            <figcaption>Tracking preview from the ProxyPose project</figcaption>
+          </figure>
+          <div>
+            <a class="publication-title" href="https://ruihangzhang97.github.io/proxypose/">ProxyPose: 6-DoF Pose Tracking via Video-to-Video Translation</a>
+            <p>Ruihang Zhang*, Felix Taubner*, <strong>Pooja Ravi</strong>, Kiriakos N. Kutulakos, and David B. Lindell</p>
+            <p class="publication-meta">2026 preprint · under review at NeurIPS</p>
+            <div class="publication-links">
+              <a href="https://arxiv.org/abs/2607.06555">arXiv</a>
+              <a href="https://ruihangzhang97.github.io/proxypose/">Project page</a>
+              <a href="https://github.com/ruihangzhang97/proxypose">Code</a>
+              <a href="https://ruihangzhang97.github.io/proxypose/videos/teaser/teaser.mp4">Full teaser</a>
             </div>
-            <div class="portrait" role="img" aria-label="Portrait placeholder with Pooja Ravi's initials">PR</div>
-        </div>
-        <section id="publications" aria-labelledby="publications-title">
-    <h2 id="publications-title" class="section-title">Publications</h2>
-    <ol class="publication-list">
+          </div>
+        </li>
         <li class="publication">
+          <div>
             <a class="publication-title" href="https://doi.org/10.1063/5.0217040">An integrated document manipulation tool leveraging LLMs, transformers, and attention mechanism</a>
             <p>A. Shukla, <strong>Pooja Ravi</strong>, and B. Arthi</p>
             <p class="publication-meta">AIP Conference Proceedings · 2023</p>
-            <a class="paper-link" href="https://doi.org/10.1063/5.0217040">Paper ↗</a>
+            <div class="publication-links"><a href="https://doi.org/10.1063/5.0217040">Paper</a></div>
+          </div>
         </li>
         <li class="publication">
+          <div>
             <a class="publication-title" href="https://doi.org/10.1007/978-981-99-2100-3_22">Real-time Multi-Module Student Engagement Detection System</a>
             <p><strong>Pooja Ravi</strong> and A. Dewan</p>
             <p class="publication-meta">ICCIS · Lecture Notes in Networks and Systems · 2022</p>
-            <a class="paper-link" href="https://doi.org/10.1007/978-981-99-2100-3_22">Paper ↗</a>
+            <div class="publication-links"><a href="https://doi.org/10.1007/978-981-99-2100-3_22">Paper</a></div>
+          </div>
         </li>
         <li class="publication">
+          <div>
             <a class="publication-title" href="https://doi.org/10.1109/SNPD54884.2022.10051771">Attention Mechanism, Linked Networks, and Pyramid Pooling Enabled 3D Biomedical Image Segmentation</a>
             <p><strong>Pooja Ravi</strong>, S. Roy, I. Dutta, and K. Kottursamy</p>
             <p class="publication-meta">IEEE/ACIS SNPD · 2022</p>
-            <a class="paper-link" href="https://doi.org/10.1109/SNPD54884.2022.10051771">Paper ↗</a>
+            <div class="publication-links"><a href="https://doi.org/10.1109/SNPD54884.2022.10051771">Paper</a></div>
+          </div>
         </li>
         <li class="publication">
+          <div>
             <a class="publication-title" href="https://doi.org/10.1007/978-981-99-4634-1_64">Real-time GPU-accelerated Driver Assistance System</a>
             <p><strong>Pooja Ravi</strong>, A. Shukla, and B. Muruganantham</p>
             <p class="publication-meta">RCAAI · Lecture Notes in Electrical Engineering · 2022</p>
-            <a class="paper-link" href="https://doi.org/10.1007/978-981-99-4634-1_64">Paper ↗</a>
+            <div class="publication-links"><a href="https://doi.org/10.1007/978-981-99-4634-1_64">Paper</a></div>
+          </div>
         </li>
-    </ol>
-</section>
-        <section id="projects">
-            <h2 class="section-title">Noteworthy Projects</h2>
+      </ol>
+    </section>
 
-            <div class="proj-entry">
-                <a href="https://github.com/01pooja10/echo-charlie" target="_blank"
-                    class="proj-name">EchoCharlie</a><span class="proj-award">Boson AI Hackathon Winner, Oct
-                    2025</span>
-                <div class="proj-desc">A multimodal voice restoration pipeline that rebuilds lost or corrupted audio in
-                    videos using visual speech recognition, transcript cleanup, and AI-driven voice cloning models.
-                </div>
-            </div>
-
-            <div class="proj-entry">
-                <a href="https://github.com/01pooja10/Sketch2D-To-Style3D" target="_blank" class="proj-name">NeRF: 2D
-                    Sketch to 3D Stylization</a>
-                <div class="proj-desc">Convert 2D sketches to stylized 3D views using neural radiance fields. Image
-                    style transfer with NeRF trained from scratch (few-shot learning) and CLIP-NeRF for text
-                    prompt-based stylization.</div>
-            </div>
-
-            <div class="proj-entry">
-                <a href="https://github.com/01pooja10/MobileGen" target="_blank" class="proj-name">MobileGen: Optimizing
-                    Diffusion Models</a>
-                <div class="proj-desc">Optimized DDPM for mobile inference via quantization-aware training, knowledge
-                    distillation, pruning, and U-Net architecture modifications. 20% faster inference, 14% lower GFLOPs.
-                </div>
-            </div>
-
-            <div class="proj-entry">
-                <a href="https://github.com/01pooja10/multimodal-xray" target="_blank" class="proj-name">RayGen: X-ray
-                    Image Synthesis</a>
-                <div class="proj-desc">Cross-modal pipeline aligning vision and language embeddings to reconstruct
-                    latent representations for chest X-ray synthesis. Masked images concatenated with BERT-processed
-                    radiology reports.</div>
-            </div>
-
-            <div class="proj-entry">
-                <a href="https://github.com/01pooja10/Sketch-to-Shoe" target="_blank" class="proj-name">Sketch2Shoe with
-                    Pix2Pix GAN</a>
-                <div class="proj-desc">Pix2Pix GAN implemented from scratch with mixed-precision training and
-                    post-training pruning. Converts grayscale shoe sketches to photo-realistic versions.</div>
-            </div>
-
-            <div class="proj-entry">
-                <a href="https://github.com/01pooja10/EasyDocsResearch" target="_blank" class="proj-name">EasyDocs</a>
-                <div class="proj-desc">All-in-one academic utility: text summarization, document OCR/parsing, keyword
-                    extraction, similar-publications recommender, and text-to-speech.</div>
-            </div>
-        </section>
-        <section id="experience">
-            <h2 class="section-title">Experience</h2>
-
-            <div class="exp-entry">
-                <div class="exp-header">
-                    <span class="exp-role">Machine Learning Engineer</span>
-                    <span class="exp-date">May 2024 &ndash; Present</span>
-                </div>
-                <div class="exp-company">Q2 Software Inc., Austin, USA (Remote)</div>
-                <ul class="exp-points">
-                    <li>Independently led the signature verification project: scalable end-to-end workflows for cheque
-                        signature comparison across a 200k image database. Trained variational autoencoders for
-                        signature embeddings, used triplet loss with contrastive learning and Siamese networks, and
-                        fine-tuned multimodal LLMs for real-time visual similarity assessment.</li>
-                    <li>Contributed to an end-to-end cheque fraud prevention pipeline. Trained LayoutLM, Swin+BART
-                        (Donut), and TrOCR on 100k+ cheque images. Improved text extraction by 8%, flagging rate by 4%,
-                        and reduced inference latency. System in production for 270+ financial institutions.</li>
-                    <li><span class="patent-note">Patent Pending</span> &mdash; Scalable visual representation learning
-                        algorithm with pretrained feature extractors and high-dimensional clustering for cheque format
-                        diversity.</li>
-                </ul>
-            </div>
-
-            <div class="exp-entry">
-                <div class="exp-header">
-                    <span class="exp-role">Machine Learning Engineer</span>
-                    <span class="exp-date">Oct 2023 &ndash; Mar 2024</span>
-                </div>
-                <div class="exp-company">16 Bit, Toronto, Canada (Part-time)</div>
-                <ul class="exp-points">
-                    <li>Led research on predicting knee osteoarthritis progression (~96 months) using image-to-image
-                        translation on X-ray images depicting different arthritis grades.</li>
-                    <li>Worked with GANs, contrastive learning, diffusion models, PyTorch Lightning distributed
-                        training, and LoRA. Achieved ~10x training speedup for 70k+ X-rays and ~19% increase in image
-                        realism.</li>
-                    <li>Translated generated images into clinically relevant output mappings with medical domain
-                        experts.</li>
-                </ul>
-            </div>
-
-            <div class="exp-entry">
-                <div class="exp-header">
-                    <span class="exp-role">Computer Vision Intern</span>
-                    <span class="exp-date">Jun 2021 &ndash; Sep 2021</span>
-                </div>
-                <div class="exp-company">Blunav Technologies, IIT Madras, India</div>
-                <ul class="exp-points">
-                    <li>Automated aircraft turnaround detection from real-time CCTV feeds using AWS SageMaker, object
-                        detection, tracking, and in-video distance calculation.</li>
-                    <li>3x real-time inference speedup and 11% mAP improvement with scaled-YOLOv4.</li>
-                </ul>
-            </div>
-        </section>
-        <section id="research">
-            <h2 class="section-title">Research</h2>
-
-            <div class="exp-entry">
-                <div class="exp-header">
-                    <span class="exp-role">Mitacs Globalink Research Intern</span>
-                    <span class="exp-date">Jun 2022 &ndash; Sep 2022</span>
-                </div>
-                <div class="exp-company">Athabasca University, Edmonton, Canada &mdash; Supervised by Dr. Ali Dewan
-                </div>
-                <ul class="exp-points">
-                    <li>Built a real-time student engagement detection pipeline using 3D residual, spatiotemporal
-                        convolutional networks for video analysis.</li>
-                    <li>Frame classification and 3D mesh facial landmark tracking: ~10.4% increase in tracking
-                        performance, up to 12% latency decrease via multiprocessing.</li>
-                </ul>
-            </div>
-
-            <div class="exp-entry">
-                <div class="exp-header">
-                    <span class="exp-role">Undergraduate Researcher</span>
-                    <span class="exp-date">Mar 2021 &ndash; Oct 2022</span>
-                </div>
-                <div class="exp-company">SRM IST, Chennai, India &mdash; Supervised by Dr. B. Muruganantham &amp; Dr.
-                    Kottilingam K</div>
-                <ul class="exp-points">
-                    <li>Driver safety monitoring system using Swin Transformer for road entity detection, physical
-                        distance estimation, and microsleep/drowsiness tracking.</li>
-                    <li>3D image segmentation networks with soft attention, residual blocks, and pyramid pooling,
-                        benchmarked on BraTS2020 for brain tumor localization.</li>
-                </ul>
-            </div>
-        </section>
-        <section id="education">
-            <h2 class="section-title">Education</h2>
-
-            <div class="edu-entry">
-                <div class="edu-degree">Master of Science in Applied Computing (MScAC)</div>
-                <div class="edu-school">University of Toronto</div>
-                <div class="edu-date">Sep 2023 &ndash; Jan 2025</div>
-                <div class="edu-detail">
-                    <span class="award-inline">Vector Scholarship in AI</span> &middot; <span
-                        class="award-inline">Mitacs Globalink Graduate Fellowship</span>
-                </div>
-                <div class="edu-detail">
-                    Courses: Computational Imaging (D. Lindell), ML for Healthcare (R. G. Krishnan), Natural Language
-                    Computing (G. Penn), Visual &amp; Mobile Computing (N. Vijaykumar)
-                </div>
-            </div>
-
-            <div class="edu-entry">
-                <div class="edu-degree">B.Tech. Computer Science &amp; Engineering</div>
-                <div class="edu-school">SRM Institute of Science and Technology, Chennai, India</div>
-                <div class="edu-date">Jun 2019 &ndash; May 2023</div>
-            </div>
-        </section>
-        <section id="skills">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-block">
-                <strong>Core:</strong> Python, PyTorch, AWS SageMaker, Docker, JAX, SQL<br>
-                <strong>Libraries:</strong> OpenCV, NumPy, HuggingFace, TensorFlow, NLTK, TensorRT<br>
-                <strong>Vision:</strong> Object Tracking, Semantic Segmentation, Video Diffusion, OCR
-                3D Vision<br>
-                <strong>Optimization:</strong> Quantization, Pruning, Distributed Training, LoRA, Knowledge
-                Distillation<br>
-                <strong>Healthcare:</strong> Medical Imaging, X-Ray Synthesis, 3D Segmentation, Time Series
-            </div>
-        </section>
-        <footer>
-            <span>© Pooja Ravi</span>
-            <span>Design inspired by <a href="https://github.com/mavroudisv/plain-academic">Plain Academic</a></span>
-        </footer>
-    </main>
+    <footer>
+      <span>© Pooja Ravi</span>
+      <span>Design inspired by <a href="https://github.com/mavroudisv/plain-academic">Plain Academic</a></span>
+    </footer>
+  </main>
+  <script>
+    const preview = document.querySelector(".publication-video");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    function syncMotion() {
+      if (reducedMotion.matches) {
+        preview.pause();
+        preview.currentTime = 0;
+      } else {
+        preview.play().catch(() => {});
+      }
+    }
+    reducedMotion.addEventListener("change", syncMotion);
+    syncMotion();
+  </script>
 </body>
 </html>
