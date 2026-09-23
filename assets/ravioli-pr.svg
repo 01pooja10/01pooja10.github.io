@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">PR in a ravioli</title>
+  <path d="M10 6 Q14 2 18 6 Q22 10 26 6 Q30 2 34 6 Q38 10 42 6 Q46 2 50 6 Q54 6 58 10 Q62 14 58 18 Q54 22 58 26 Q62 30 58 34 Q54 38 58 42 Q62 46 58 50 Q58 54 54 58 Q50 62 46 58 Q42 54 38 58 Q34 62 30 58 Q26 54 22 58 Q18 62 14 58 Q10 58 6 54 Q2 50 6 46 Q10 42 6 38 Q2 34 6 30 Q10 26 6 22 Q2 18 6 14 Q6 10 10 6 Z" fill="#f2c979" stroke="#9e6a2f" stroke-width="1.8" stroke-linejoin="round"/>
+  <text x="32" y="41" fill="#51351e" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" letter-spacing="-1.8" text-anchor="middle">PR</text>
+</svg>
