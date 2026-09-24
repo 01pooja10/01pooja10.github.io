@@ -8,8 +8,8 @@
 }
 
 body {
-  max-width: 100ch;
-  padding: 1.35rem 1.7rem 3rem;
+  max-width: 110ch;
+  padding: 1.35rem 1.4rem 3rem;
 }
 
 a { text-underline-offset: .14em; }
