@@ -22,9 +22,8 @@ img, video { max-width: 100%; }
 .header-inner { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-bottom: .65rem; }
 .brand { color: var(--body-color) !important; font-variant: small-caps; font-size: 1.12rem; font-weight: bold; text-decoration: none; }
 .site-nav { display: flex; flex-wrap: wrap; gap: 1.2rem; }
-.site-nav a, .nav-placeholder { font: inherit; font-size: .98rem; text-decoration: none; }
+.site-nav a { font: inherit; font-size: .98rem; text-decoration: none; }
 .site-nav a:hover { text-decoration: underline; }
-.nav-placeholder { border: 0; padding: 0; background: none; color: var(--link-visited); cursor: default; }
 
 .intro { padding: 0 0 var(--section-gap); }
 .title-block { text-align: center; margin: 0 auto 2.65rem; }
