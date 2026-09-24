@@ -4,6 +4,7 @@
   --body-color: #171717;
   --link-visited: #8d2020;
   --rule: #333;
+  --section-gap: 3rem;
 }
 
 body {
@@ -25,7 +26,7 @@ img, video { max-width: 100%; }
 .site-nav a:hover { text-decoration: underline; }
 .nav-placeholder { border: 0; padding: 0; background: none; color: var(--link-visited); cursor: default; }
 
-.intro { padding: 0 0 3rem; }
+.intro { padding: 0 0 var(--section-gap); }
 .title-block { text-align: center; margin: 0 auto 2.65rem; }
 .title-block h1 { margin: 0 0 .1rem; font-size: 2.4rem; line-height: 1.2; letter-spacing: .018em; font-kerning: normal; }
 .tagline { margin: 0; font-size: 1.15rem; }
@@ -42,8 +43,7 @@ img, video { max-width: 100%; }
 .social-links svg { width: 13px; height: 13px; fill: currentColor; flex: none; }
 
 section:not(.intro) { scroll-margin-top: 1rem; }
-#publications { padding: 0 0 3rem; }
-#projects { padding: 0 0 3rem; }
+#publications, #projects { padding: 0 0 var(--section-gap); }
 #miscellaneous { padding: 0 0 1.7rem; }
 #miscellaneous p { margin: .35rem 0 0; }
 .section-heading { padding-bottom: .25rem; border-bottom: 1px solid #999; }
@@ -51,6 +51,7 @@ section:not(.intro) { scroll-margin-top: 1rem; }
 .publication-list, .project-list { margin: .6rem 0 0; padding: 0; list-style: none; }
 .publication, .project { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1.25rem; padding: 1.15rem 0; border-top: 1px solid #bbb; }
 .publication:first-child, .project:first-child { border-top: 0; }
+.publication:last-child, .project:last-child { padding-bottom: 0; }
 .publication-visual, .project-visual { margin: 0; }
 .publication-visual img, .publication-visual video, .project-visual img {
   display: block;
@@ -67,7 +68,7 @@ a.publication-title:hover, a.project-title:hover { color: var(--link-visited) !i
 .publication-links { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: .55rem; }
 .publication-links a { white-space: nowrap; }
 
-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .3rem 1rem; margin-top: .3rem; padding-top: .8rem; border-top: 1px solid var(--rule); font-size: .9rem; }
+footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .3rem 1rem; margin-top: 0; padding-top: .8rem; border-top: 1px solid var(--rule); font-size: .9rem; }
 
 @media (max-width: 680px) {
   body { padding-inline: 1.1rem; }
