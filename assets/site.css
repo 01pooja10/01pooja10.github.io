@@ -25,9 +25,9 @@ img, video { max-width: 100%; }
 .site-nav a:hover { text-decoration: underline; }
 .nav-placeholder { border: 0; padding: 0; background: none; color: var(--link-visited); cursor: default; }
 
-.intro { padding: 0 0 2.25rem; }
+.intro { padding: 0 0 3rem; }
 .title-block { text-align: center; margin: 0 auto 2.65rem; }
-.title-block h1 { margin: 0 0 .1rem; font-size: 2.65rem; line-height: 1.17; }
+.title-block h1 { margin: 0 0 .1rem; font-size: 2.4rem; line-height: 1.2; letter-spacing: .018em; font-kerning: normal; }
 .tagline { margin: 0; font-size: 1.15rem; }
 .university-logo { display: inline-block; width: 21px; height: 21px; margin-left: 3px; vertical-align: -.28em; object-fit: contain; }
 .intro-body { display: grid; grid-template-columns: minmax(0, 1fr) 178px; align-items: start; gap: 2.2rem; }
@@ -42,8 +42,8 @@ img, video { max-width: 100%; }
 .social-links svg { width: 13px; height: 13px; fill: currentColor; flex: none; }
 
 section:not(.intro) { scroll-margin-top: 1rem; }
-#publications { padding: 0 0 2.4rem; }
-#projects { padding: 0 0 1.5rem; }
+#publications { padding: 0 0 3rem; }
+#projects { padding: 0 0 3rem; }
 #miscellaneous { padding: 0 0 1.7rem; }
 #miscellaneous p { margin: .35rem 0 0; }
 .section-heading { padding-bottom: .25rem; border-bottom: 1px solid #999; }
@@ -80,7 +80,7 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .3
 }
 @media (max-width: 510px) {
   .title-block { margin-bottom: 1.8rem; }
-  .title-block h1 { font-size: 2.4rem; }
+  .title-block h1 { font-size: 2.2rem; }
   .intro-body { display: flex; flex-direction: column-reverse; align-items: stretch; }
   .portrait-wrap { align-self: center; }
   .portrait-wrap { width: 165px; height: 165px; }
