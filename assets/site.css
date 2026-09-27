@@ -38,7 +38,7 @@ img, video { max-width: 100%; }
 .portrait-wrap { width: 178px; height: 178px; overflow: hidden; }
 .portrait { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.13); }
 .interest-tags { display: flex; flex-wrap: wrap; gap: .45rem; margin: 1.25rem 0 0; padding: 0; list-style: none; }
-.interest-tags li { border: 1px solid #999; padding: .17rem .55rem; font-size: var(--content-size); line-height: 1.35; white-space: nowrap; }
+.interest-tags li { border: 1px solid #999; padding: .17rem .55rem; color: var(--link-visited); font-size: var(--content-size); line-height: 1.35; white-space: nowrap; }
 .social-links { display: flex; flex-wrap: wrap; gap: .4rem 1.25rem; margin: 0; padding: 1.4rem 0 0; list-style: none; }
 .social-links a { display: inline-flex; align-items: center; gap: .28rem; font-size: var(--content-size); }
 .social-links svg { width: 13px; height: 13px; fill: currentColor; flex: none; }
