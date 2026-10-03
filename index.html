@@ -4,19 +4,33 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Pooja Ravi is a researcher at the University of Toronto working on robot manipulation and action-conditioned world models.">
+  <meta name="theme-color" content="#ffffff">
   <title>Pooja Ravi</title>
+  <script>
+    try {
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        document.documentElement.dataset.theme = "dark";
+      }
+    } catch (_) { /* Keep the light theme when storage is unavailable. */ }
+  </script>
   <link rel="icon" type="image/svg+xml" href="assets/ravioli-pr.svg?v=3">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/ravioli-32-v3.png">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/ravioli-192-v3.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/ravioli-touch-v3.png">
   <link rel="stylesheet" href="assets/latex.css">
-  <link rel="stylesheet" href="assets/site.css?v=df9f36d">
+  <link rel="stylesheet" href="assets/site.css?v=theme-1">
 </head>
 <body>
   <header class="site-header">
     <div class="shell header-inner">
       <a class="brand" href="#about">Pooja Ravi</a>
       <nav class="site-nav" aria-label="Main navigation">
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.6A8.5 8.5 0 0 1 8.4 3.8 8.5 8.5 0 1 0 20.2 15.6Z"/></svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+        </button>
         <a href="#about">About</a>
         <a href="#publications">Publications</a>
         <a href="#projects">Projects</a>
@@ -75,7 +89,7 @@
         </li>
         <li class="publication publication--featured">
           <figure class="publication-visual">
-            <img src="assets/publications/biomedical-segmentation.png" alt="Three brain MRI views with green and yellow segmentation overlays" width="2162" height="858" loading="lazy">
+            <img class="brain-tumor-image" src="assets/publications/biomedical-segmentation.png" alt="Three brain MRI views with green and yellow segmentation overlays" width="2162" height="858" loading="lazy">
           </figure>
           <div>
             <a class="publication-title" href="https://doi.org/10.1109/SNPD54884.2022.10051771">Attention Mechanism, Linked Networks, and Pyramid Pooling Enabled 3D Biomedical Image Segmentation</a>
@@ -160,6 +174,24 @@
     </footer>
   </main>
   <script>
+    const themeToggle = document.querySelector(".theme-toggle");
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    function syncThemeToggle() {
+      const dark = document.documentElement.dataset.theme === "dark";
+      const label = dark ? "Switch to light mode" : "Switch to dark mode";
+      themeToggle.setAttribute("aria-label", label);
+      themeToggle.setAttribute("title", label);
+      themeToggle.setAttribute("aria-pressed", String(dark));
+      themeColor.content = dark ? "#292b2f" : "#ffffff";
+    }
+    themeToggle.addEventListener("click", () => {
+      const dark = document.documentElement.dataset.theme !== "dark";
+      if (dark) document.documentElement.dataset.theme = "dark";
+      else delete document.documentElement.dataset.theme;
+      try { localStorage.setItem("theme", dark ? "dark" : "light"); } catch (_) {}
+      syncThemeToggle();
+    });
+    syncThemeToggle();
     const preview = document.querySelector(".publication-video");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     function syncMotion() {
